@@ -18,3 +18,10 @@ const POWERUP_TYPES = {
     magnet: { color: "#cc00ff", glow: "#aa00ee", symbol: "◈", label: "COIN MAGNET", duration: 400 },
   slow: { color: "#ffff00", glow: "#cccc00", symbol: "⏱", label: "SLOW TIME", duration: 250 },
 };
+
+const COIN_COLORS = ["#ffd700", "#ffec6e", "#ffe135"];
+
+const C = {
+  bg: "#02020e", road: "#08081a", cyan: "#00f5ff", pink: "#ff006e",
+  yellow: "#ffbe0b", green: "#06d6a0", orange: "#ff6600", purple: "#cc00ff",
+};
