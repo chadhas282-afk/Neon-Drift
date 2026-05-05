@@ -25,3 +25,7 @@ const C = {
   bg: "#02020e", road: "#08081a", cyan: "#00f5ff", pink: "#ff006e",
   yellow: "#ffbe0b", green: "#06d6a0", orange: "#ff6600", purple: "#cc00ff",
 };
+
+function rr(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y); ctx.lineTo(x + w - r, y);
