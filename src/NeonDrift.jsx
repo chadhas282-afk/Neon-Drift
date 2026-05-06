@@ -42,3 +42,9 @@ function rr(ctx, x, y, w, h, r) {
 function overlap(ax, ay, aw, ah, bx, by, bw, bh) {
   return ax < bx + bw && ax + aw > bx && ay < by + bh && ay + ah > by;
 }
+
+function lerp(a, b, t) { return a + (b - a) * t; }
+
+function mkStars() {
+  return Array.from({ length: 120 }, () => ({
+    x: Math.random() * W, y: Math.random() * H,
