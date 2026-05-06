@@ -104,3 +104,6 @@ function drawRoad(ctx, offset, speed) {
     ctx.setLineDash([28, 18]); ctx.lineDashOffset = -offset;
     ctx.strokeStyle = l === 2 ? "rgba(255,0,110,0.2)" : "rgba(0,245,255,0.12)";
     ctx.lineWidth = l === 2 ? 1.5 : 1;
+     ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+  }
+  ctx.setLineDash([]); ctx.lineDashOffset = 0;
