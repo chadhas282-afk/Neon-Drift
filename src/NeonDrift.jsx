@@ -124,3 +124,7 @@ function drawObstacle(ctx, o, frame) {
       ctx.fillStyle = "#1a0800";
     rr(ctx, -o.w / 2, -o.h / 2, o.w, o.h, 3); ctx.fill();
     const stripes = 4;
+     for (let i = 0; i < stripes; i++) {
+      ctx.fillStyle = i % 2 === 0 ? "#ff6600" : "#ffbe0b";
+      ctx.fillRect(-o.w / 2 + i * (o.w / stripes), -o.h / 2, o.w / stripes, o.h);
+    }
