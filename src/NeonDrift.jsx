@@ -75,3 +75,6 @@ function drawRoad(ctx, offset, speed) {
   const sg = ctx.createLinearGradient(0, 0, ROAD_LEFT, 0);
   sg.addColorStop(0, "#02020e"); sg.addColorStop(1, "rgba(0,245,255,0.03)");
   ctx.fillStyle = sg; ctx.fillRect(0, 0, ROAD_LEFT, H);
+  const sg2 = ctx.createLinearGradient(ROAD_RIGHT, 0, W, 0);
+  sg2.addColorStop(0, "rgba(0,245,255,0.03)"); sg2.addColorStop(1, "#02020e");
+  ctx.fillStyle = sg2; ctx.fillRect(ROAD_RIGHT, 0, W - ROAD_RIGHT, H);
