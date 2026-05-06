@@ -48,3 +48,9 @@ function lerp(a, b, t) { return a + (b - a) * t; }
 function mkStars() {
   return Array.from({ length: 120 }, () => ({
     x: Math.random() * W, y: Math.random() * H,
+     r: Math.random() * 1.4 + 0.2,
+    speed: Math.random() * 0.5 + 0.05,
+    opacity: Math.random() * 0.8 + 0.2,
+    twinkle: Math.random() * Math.PI * 2,
+  }));
+}
