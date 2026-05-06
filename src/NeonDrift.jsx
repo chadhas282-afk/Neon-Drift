@@ -116,3 +116,8 @@ function drawRoad(ctx, offset, speed) {
     ctx.fillStyle = refGrad; ctx.fillRect(ROAD_LEFT, H * 0.7, ROAD_W, H * 0.3);
   }
 }
+
+function drawObstacle(ctx, o, frame) {
+  ctx.save(); ctx.translate(o.x, o.y);
+
+  if (o.type === "barrier") {
