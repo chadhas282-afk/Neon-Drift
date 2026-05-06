@@ -101,3 +101,6 @@ function drawRoad(ctx, offset, speed) {
 
   for (let l = 1; l < LANES; l++) {
     const x = ROAD_LEFT + l * LANE_W;
+    ctx.setLineDash([28, 18]); ctx.lineDashOffset = -offset;
+    ctx.strokeStyle = l === 2 ? "rgba(255,0,110,0.2)" : "rgba(0,245,255,0.12)";
+    ctx.lineWidth = l === 2 ? 1.5 : 1;
