@@ -96,3 +96,8 @@ function drawRoad(ctx, offset, speed) {
     ctx.shadowColor = C.cyan; ctx.shadowBlur = 14;
   ctx.strokeStyle = "rgba(0,245,255,0.55)"; ctx.lineWidth = 1.5;
   ctx.beginPath(); ctx.moveTo(ROAD_LEFT, 0); ctx.lineTo(ROAD_LEFT, H); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(ROAD_RIGHT, 0); ctx.lineTo(ROAD_RIGHT, H); ctx.stroke();
+  ctx.shadowBlur = 0;
+
+  for (let l = 1; l < LANES; l++) {
+    const x = ROAD_LEFT + l * LANE_W;
