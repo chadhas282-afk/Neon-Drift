@@ -57,3 +57,11 @@ function mkStars() {
 
 function lsGet(k, def) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : def; } catch { return def; } }
 function lsSet(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { } }
+
+
+function drawBg(ctx) { ctx.fillStyle = C.bg; ctx.fillRect(0, 0, W, H); }
+
+function drawStars(ctx, stars, frame) {
+  stars.forEach(s => {
+    s.twinkle += 0.03;
+    const op = s.opacity * (0.7 + 0.3 * Math.sin(s.twinkle));
