@@ -121,3 +121,6 @@ function drawObstacle(ctx, o, frame) {
   ctx.save(); ctx.translate(o.x, o.y);
 
   if (o.type === "barrier") {
+      ctx.fillStyle = "#1a0800";
+    rr(ctx, -o.w / 2, -o.h / 2, o.w, o.h, 3); ctx.fill();
+    const stripes = 4;
