@@ -82,3 +82,8 @@ function drawRoad(ctx, offset, speed) {
   const rg = ctx.createLinearGradient(ROAD_LEFT, 0, ROAD_RIGHT, 0);
   rg.addColorStop(0, "#090920"); rg.addColorStop(0.15, "#0d0d28");
   rg.addColorStop(0.5, "#0f0f2e"); rg.addColorStop(0.85, "#0d0d28");
+    rg.addColorStop(1, "#090920");
+  ctx.fillStyle = rg; ctx.fillRect(ROAD_LEFT, 0, ROAD_W, H);
+
+  for (let side = 0; side < 2; side++) {
+    const ex = side === 0 ? ROAD_LEFT : ROAD_RIGHT;
