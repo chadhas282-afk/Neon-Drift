@@ -65,3 +65,7 @@ function drawStars(ctx, stars, frame) {
   stars.forEach(s => {
     s.twinkle += 0.03;
     const op = s.opacity * (0.7 + 0.3 * Math.sin(s.twinkle));
+     ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(180,220,255,${op * 0.6})`; ctx.fill();
+  });
+}
