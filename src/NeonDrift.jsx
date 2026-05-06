@@ -54,3 +54,6 @@ function mkStars() {
     twinkle: Math.random() * Math.PI * 2,
   }));
 }
+
+function lsGet(k, def) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : def; } catch { return def; } }
+function lsSet(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { } }
