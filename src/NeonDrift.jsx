@@ -107,3 +107,7 @@ function drawRoad(ctx, offset, speed) {
      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
   }
   ctx.setLineDash([]); ctx.lineDashOffset = 0;
+
+  if (speed > 7) {
+    const alpha = Math.min((speed - 7) / 14, 0.18);
+    const refGrad = ctx.createLinearGradient(ROAD_LEFT, H * 0.7, ROAD_LEFT, H);
