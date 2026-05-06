@@ -92,3 +92,7 @@ function drawRoad(ctx, offset, speed) {
     else { eg.addColorStop(0, "rgba(0,245,255,0.06)"); eg.addColorStop(1, "transparent"); }
     ctx.fillStyle = eg; ctx.fillRect(ex - (side === 0 ? 20 : 0), 0, 20, H);
   }
+
+    ctx.shadowColor = C.cyan; ctx.shadowBlur = 14;
+  ctx.strokeStyle = "rgba(0,245,255,0.55)"; ctx.lineWidth = 1.5;
+  ctx.beginPath(); ctx.moveTo(ROAD_LEFT, 0); ctx.lineTo(ROAD_LEFT, H); ctx.stroke();
