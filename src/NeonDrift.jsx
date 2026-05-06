@@ -111,3 +111,8 @@ function drawRoad(ctx, offset, speed) {
   if (speed > 7) {
     const alpha = Math.min((speed - 7) / 14, 0.18);
     const refGrad = ctx.createLinearGradient(ROAD_LEFT, H * 0.7, ROAD_LEFT, H);
+    refGrad.addColorStop(0, `rgba(0,245,255,0)`);
+    refGrad.addColorStop(1, `rgba(0,245,255,${alpha})`);
+    ctx.fillStyle = refGrad; ctx.fillRect(ROAD_LEFT, H * 0.7, ROAD_W, H * 0.3);
+  }
+}
