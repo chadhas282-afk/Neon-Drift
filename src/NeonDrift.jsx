@@ -69,3 +69,9 @@ function drawStars(ctx, stars, frame) {
     ctx.fillStyle = `rgba(180,220,255,${op * 0.6})`; ctx.fill();
   });
 }
+
+
+function drawRoad(ctx, offset, speed) {
+  const sg = ctx.createLinearGradient(0, 0, ROAD_LEFT, 0);
+  sg.addColorStop(0, "#02020e"); sg.addColorStop(1, "rgba(0,245,255,0.03)");
+  ctx.fillStyle = sg; ctx.fillRect(0, 0, ROAD_LEFT, H);
