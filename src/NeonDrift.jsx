@@ -191,3 +191,6 @@ function drawCoin(ctx, c, frame) {
   ctx.fillStyle = COIN_COLORS[Math.floor(frame * 0.1 + c.phase) % COIN_COLORS.length];
   ctx.fill();
   ctx.strokeStyle = "#ffec6e"; ctx.lineWidth = 1.5; ctx.stroke();
+  ctx.shadowBlur = 0;
+  ctx.restore();
+}
