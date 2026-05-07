@@ -126,3 +126,6 @@ function drawObstacle(ctx, o, frame) {
       ctx.fillStyle = i % 2 === 0 ? "#ff6600" : "#ffbe0b";
       ctx.fillRect(-o.w / 2 + i * (o.w / stripes), -o.h / 2, o.w / stripes, o.h);
     }
+     ctx.shadowColor = "#ff6600"; ctx.shadowBlur = 8;
+    ctx.strokeStyle = "rgba(255,100,0,0.6)"; ctx.lineWidth = 1;
+    rr(ctx, -o.w / 2, -o.h / 2, o.w, o.h, 3); ctx.stroke();
