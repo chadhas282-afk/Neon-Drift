@@ -172,3 +172,6 @@ function drawPowerup(ctx, p, frame) {
   ctx.beginPath();
   for (let i = 0; i < 6; i++) {
     const a = (i / 6) * Math.PI * 2 - Math.PI / 6;
+     const r = 14 + pulse * 0.3;
+    i === 0 ? ctx.moveTo(Math.cos(a) * r, Math.sin(a) * r) : ctx.lineTo(Math.cos(a) * r, Math.sin(a) * r);
+  }
