@@ -177,3 +177,7 @@ function drawPowerup(ctx, p, frame) {
   }
   ctx.closePath(); ctx.stroke();
   ctx.shadowBlur = 0;
+  ctx.font = "13px serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
+  ctx.fillText(cfg.symbol, 0, 0);
+  ctx.restore();
+}
