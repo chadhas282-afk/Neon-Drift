@@ -181,3 +181,7 @@ function drawPowerup(ctx, p, frame) {
   ctx.fillText(cfg.symbol, 0, 0);
   ctx.restore();
 }
+
+function drawCoin(ctx, c, frame) {
+  ctx.save(); ctx.translate(c.x, c.y);
+  const scaleX = Math.abs(Math.cos(frame * 0.07 + c.phase));
