@@ -133,3 +133,6 @@ function drawObstacle(ctx, o, frame) {
     const cg = ctx.createLinearGradient(-o.w / 2, -o.h / 2, o.w / 2, o.h / 2);
     cg.addColorStop(0, o.color + "dd");
     cg.addColorStop(0.4, o.color + "ff");
+     cg.addColorStop(1, o.color + "66");
+    ctx.fillStyle = cg;
+    rr(ctx, -o.w / 2, -o.h / 2, o.w, o.h, 6); ctx.fill();
