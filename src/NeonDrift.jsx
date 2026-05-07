@@ -164,3 +164,6 @@ function drawObstacle(ctx, o, frame) {
 }
 
 function drawPowerup(ctx, p, frame) {
+  ctx.save(); ctx.translate(p.x, p.y);
+  const pulse = Math.sin(frame * 0.08) * 3;
+  const cfg = POWERUP_TYPES[p.type];
