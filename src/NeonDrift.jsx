@@ -129,3 +129,7 @@ function drawObstacle(ctx, o, frame) {
      ctx.shadowColor = "#ff6600"; ctx.shadowBlur = 8;
     ctx.strokeStyle = "rgba(255,100,0,0.6)"; ctx.lineWidth = 1;
     rr(ctx, -o.w / 2, -o.h / 2, o.w, o.h, 3); ctx.stroke();
+    } else {
+    const cg = ctx.createLinearGradient(-o.w / 2, -o.h / 2, o.w / 2, o.h / 2);
+    cg.addColorStop(0, o.color + "dd");
+    cg.addColorStop(0.4, o.color + "ff");
