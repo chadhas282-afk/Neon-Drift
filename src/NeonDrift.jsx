@@ -175,3 +175,5 @@ function drawPowerup(ctx, p, frame) {
      const r = 14 + pulse * 0.3;
     i === 0 ? ctx.moveTo(Math.cos(a) * r, Math.sin(a) * r) : ctx.lineTo(Math.cos(a) * r, Math.sin(a) * r);
   }
+  ctx.closePath(); ctx.stroke();
+  ctx.shadowBlur = 0;
