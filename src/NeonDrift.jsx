@@ -151,3 +151,7 @@ function drawObstacle(ctx, o, frame) {
     ctx.fillStyle = "#fffde0"; ctx.shadowColor = "#ffffff"; ctx.shadowBlur = 14;
     ctx.fillRect(-o.w / 2 + 4, o.h / 2 - 11, 8, 5);
     ctx.fillRect(o.w / 2 - 12, o.h / 2 - 11, 8, 5);
+
+    ctx.fillStyle = "#ff2200"; ctx.shadowColor = "#ff0000"; ctx.shadowBlur = 10;
+    ctx.fillRect(-o.w / 2 + 4, -o.h / 2 + 3, 6, 4);
+    ctx.fillRect(o.w / 2 - 10, -o.h / 2 + 3, 6, 4);
