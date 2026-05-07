@@ -170,3 +170,5 @@ function drawPowerup(ctx, p, frame) {
    ctx.shadowColor = cfg.glow; ctx.shadowBlur = 16 + pulse;
   ctx.strokeStyle = cfg.color; ctx.lineWidth = 2;
   ctx.beginPath();
+  for (let i = 0; i < 6; i++) {
+    const a = (i / 6) * Math.PI * 2 - Math.PI / 6;
