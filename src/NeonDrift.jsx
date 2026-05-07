@@ -159,3 +159,8 @@ function drawObstacle(ctx, o, frame) {
      ctx.shadowBlur = 0;
     ctx.strokeStyle = "rgba(255,255,255,0.12)"; ctx.lineWidth = 1;
     rr(ctx, -o.w / 2, -o.h / 2, o.w, o.h, 6); ctx.stroke();
+      }
+  ctx.restore();
+}
+
+function drawPowerup(ctx, p, frame) {
