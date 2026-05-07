@@ -141,3 +141,7 @@ function drawObstacle(ctx, o, frame) {
     ctx.fillRect(-o.w / 2 + 5, -o.h / 2 + 10, o.w - 10, o.h * 0.38);
     ctx.fillStyle = "rgba(255,255,255,0.06)";
     ctx.fillRect(-o.w / 2 + 7, -o.h / 2 + 12, o.w - 14, o.h * 0.32);
+
+     ctx.fillStyle = "rgba(0,0,0,0.55)";
+    ctx.beginPath(); ctx.ellipse(-o.w / 2 + 5, o.h / 2 - 8, 6, 4, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(o.w / 2 - 5, o.h / 2 - 8, 6, 4, 0, 0, Math.PI * 2); ctx.fill();
