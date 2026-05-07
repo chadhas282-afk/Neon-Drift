@@ -126,26 +126,26 @@ function drawObstacle(ctx, o, frame) {
       ctx.fillStyle = i % 2 === 0 ? "#ff6600" : "#ffbe0b";
       ctx.fillRect(-o.w / 2 + i * (o.w / stripes), -o.h / 2, o.w / stripes, o.h);
     }
-     ctx.shadowColor = "#ff6600"; ctx.shadowBlur = 8;
+    ctx.shadowColor = "#ff6600"; ctx.shadowBlur = 8;
     ctx.strokeStyle = "rgba(255,100,0,0.6)"; ctx.lineWidth = 1;
     rr(ctx, -o.w / 2, -o.h / 2, o.w, o.h, 3); ctx.stroke();
-    } else {
+  } else {
     const cg = ctx.createLinearGradient(-o.w / 2, -o.h / 2, o.w / 2, o.h / 2);
     cg.addColorStop(0, o.color + "dd");
     cg.addColorStop(0.4, o.color + "ff");
-     cg.addColorStop(1, o.color + "66");
+    cg.addColorStop(1, o.color + "66");
     ctx.fillStyle = cg;
     rr(ctx, -o.w / 2, -o.h / 2, o.w, o.h, 6); ctx.fill();
 
-     ctx.fillStyle = "rgba(0,0,0,0.65)";
+    ctx.fillStyle = "rgba(0,0,0,0.65)";
     ctx.fillRect(-o.w / 2 + 5, -o.h / 2 + 10, o.w - 10, o.h * 0.38);
     ctx.fillStyle = "rgba(255,255,255,0.06)";
     ctx.fillRect(-o.w / 2 + 7, -o.h / 2 + 12, o.w - 14, o.h * 0.32);
 
-     ctx.fillStyle = "rgba(0,0,0,0.55)";
+    ctx.fillStyle = "rgba(0,0,0,0.55)";
     ctx.beginPath(); ctx.ellipse(-o.w / 2 + 5, o.h / 2 - 8, 6, 4, 0, 0, Math.PI * 2); ctx.fill();
     ctx.beginPath(); ctx.ellipse(o.w / 2 - 5, o.h / 2 - 8, 6, 4, 0, 0, Math.PI * 2); ctx.fill();
-     ctx.beginPath(); ctx.ellipse(-o.w / 2 + 5, -o.h / 2 + 8, 6, 4, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(-o.w / 2 + 5, -o.h / 2 + 8, 6, 4, 0, 0, Math.PI * 2); ctx.fill();
     ctx.beginPath(); ctx.ellipse(o.w / 2 - 5, -o.h / 2 + 8, 6, 4, 0, 0, Math.PI * 2); ctx.fill();
 
     ctx.fillStyle = "#fffde0"; ctx.shadowColor = "#ffffff"; ctx.shadowBlur = 14;
@@ -155,3 +155,7 @@ function drawObstacle(ctx, o, frame) {
     ctx.fillStyle = "#ff2200"; ctx.shadowColor = "#ff0000"; ctx.shadowBlur = 10;
     ctx.fillRect(-o.w / 2 + 4, -o.h / 2 + 3, 6, 4);
     ctx.fillRect(o.w / 2 - 10, -o.h / 2 + 3, 6, 4);
+
+     ctx.shadowBlur = 0;
+    ctx.strokeStyle = "rgba(255,255,255,0.12)"; ctx.lineWidth = 1;
+    rr(ctx, -o.w / 2, -o.h / 2, o.w, o.h, 6); ctx.stroke();
