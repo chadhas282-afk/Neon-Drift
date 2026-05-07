@@ -185,3 +185,6 @@ function drawPowerup(ctx, p, frame) {
 function drawCoin(ctx, c, frame) {
   ctx.save(); ctx.translate(c.x, c.y);
   const scaleX = Math.abs(Math.cos(frame * 0.07 + c.phase));
+  ctx.scale(scaleX, 1);
+  ctx.shadowColor = "#ffd700"; ctx.shadowBlur = 10;
+  ctx.beginPath(); ctx.arc(0, 0, 7, 0, Math.PI * 2);
