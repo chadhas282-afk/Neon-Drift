@@ -136,3 +136,8 @@ function drawObstacle(ctx, o, frame) {
      cg.addColorStop(1, o.color + "66");
     ctx.fillStyle = cg;
     rr(ctx, -o.w / 2, -o.h / 2, o.w, o.h, 6); ctx.fill();
+
+     ctx.fillStyle = "rgba(0,0,0,0.65)";
+    ctx.fillRect(-o.w / 2 + 5, -o.h / 2 + 10, o.w - 10, o.h * 0.38);
+    ctx.fillStyle = "rgba(255,255,255,0.06)";
+    ctx.fillRect(-o.w / 2 + 7, -o.h / 2 + 12, o.w - 14, o.h * 0.32);
