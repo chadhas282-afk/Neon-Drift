@@ -272,3 +272,6 @@ function drawComboText(ctx, combos, frame) {
     ctx.fillStyle = c.color;
     ctx.shadowColor = c.color; ctx.shadowBlur = 12;
     ctx.fillText(c.text, c.x, c.y);
+     });
+  ctx.globalAlpha = 1; ctx.shadowBlur = 0;
+}
