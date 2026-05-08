@@ -258,3 +258,7 @@ function drawParticles(ctx, particles) {
     ctx.globalAlpha = a;
     ctx.shadowColor = p.color; ctx.shadowBlur = 5 * a;
     ctx.beginPath(); ctx.arc(p.x, p.y, Math.max(0.1, p.r * a), 0, Math.PI * 2);
+    ctx.fillStyle = p.color; ctx.fill();
+  });
+  ctx.globalAlpha = 1; ctx.shadowBlur = 0;
+}
