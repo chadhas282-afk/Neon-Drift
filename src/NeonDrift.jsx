@@ -239,3 +239,9 @@ function drawPlayer(ctx, p, inv, shieldActive, nitroActive, frame) {
   ctx.beginPath(); ctx.ellipse(p.w / 2 - 5, p.h / 2 - 10, 7, 5, 0, 0, Math.PI * 2); ctx.fill();
   ctx.beginPath(); ctx.ellipse(-p.w / 2 + 5, -p.h / 2 + 10, 7, 5, 0, 0, Math.PI * 2); ctx.fill();
   ctx.beginPath(); ctx.ellipse(p.w / 2 - 5, -p.h / 2 + 10, 7, 5, 0, 0, Math.PI * 2); ctx.fill();
+
+  ctx.fillStyle = "#fffde0"; ctx.shadowColor = "#fff"; ctx.shadowBlur = 16;
+  ctx.fillRect(-p.w / 2 + 4, p.h / 2 - 11, 8, 6); ctx.fillRect(p.w / 2 - 12, p.h / 2 - 11, 8, 6);
+
+  ctx.fillStyle = C.pink; ctx.shadowColor = C.pink; ctx.shadowBlur = 12;
+  ctx.fillRect(-p.w / 2 + 4, -p.h / 2 + 3, 7, 5); ctx.fillRect(p.w / 2 - 11, -p.h / 2 + 3, 7, 5);
