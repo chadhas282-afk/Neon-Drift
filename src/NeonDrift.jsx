@@ -194,3 +194,6 @@ function drawCoin(ctx, c, frame) {
   ctx.shadowBlur = 0;
   ctx.restore();
 }
+
+function drawPlayer(ctx, p, inv, shieldActive, nitroActive, frame) {
+  if (inv > 0 && Math.floor(inv / 5) % 2 === 0) return;
