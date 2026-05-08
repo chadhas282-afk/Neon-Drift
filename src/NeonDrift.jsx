@@ -251,3 +251,7 @@ function drawPlayer(ctx, p, inv, shieldActive, nitroActive, frame) {
   rr(ctx, -p.w / 2, -p.h / 2, p.w, p.h, 7); ctx.stroke();
   ctx.restore();
 }
+
+function drawParticles(ctx, particles) {
+  particles.forEach(p => {
+    const a = p.life / p.maxLife;
