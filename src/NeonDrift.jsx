@@ -269,3 +269,6 @@ function drawComboText(ctx, combos, frame) {
     ctx.globalAlpha = a;
     ctx.font = `bold ${c.size}px 'Orbitron', monospace`;
     ctx.textAlign = "center";
+    ctx.fillStyle = c.color;
+    ctx.shadowColor = c.color; ctx.shadowBlur = 12;
+    ctx.fillText(c.text, c.x, c.y);
