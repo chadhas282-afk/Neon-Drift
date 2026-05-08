@@ -222,3 +222,5 @@ function drawPlayer(ctx, p, inv, shieldActive, nitroActive, frame) {
 
   const bg = ctx.createLinearGradient(-p.w / 2, -p.h / 2, p.w / 2, p.h / 2);
   bg.addColorStop(0, "#00f0ff"); bg.addColorStop(0.45, "#0096b4"); bg.addColorStop(1, "#004455");
+  ctx.fillStyle = bg;
+  rr(ctx, -p.w / 2, -p.h / 2, p.w, p.h, 7); ctx.fill();
