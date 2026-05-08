@@ -210,3 +210,6 @@ function drawPlayer(ctx, p, inv, shieldActive, nitroActive, frame) {
       rr(ctx, fx - fw / 2, fy, fw, fh, fw / 2); ctx.fill();
     }
   }
+  if (shieldActive) {
+    ctx.shadowColor = C.cyan; ctx.shadowBlur = 20;
+    ctx.strokeStyle = `rgba(0,245,255,${0.4 + 0.3 * Math.sin(frame * 0.15)})`;
