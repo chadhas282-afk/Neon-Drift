@@ -213,3 +213,7 @@ function drawPlayer(ctx, p, inv, shieldActive, nitroActive, frame) {
   if (shieldActive) {
     ctx.shadowColor = C.cyan; ctx.shadowBlur = 20;
     ctx.strokeStyle = `rgba(0,245,255,${0.4 + 0.3 * Math.sin(frame * 0.15)})`;
+     ctx.lineWidth = 2.5;
+    ctx.beginPath(); ctx.ellipse(0, 0, p.w / 2 + 10, p.h / 2 + 10, 0, 0, Math.PI * 2); ctx.stroke();
+    ctx.shadowBlur = 0;
+  }
