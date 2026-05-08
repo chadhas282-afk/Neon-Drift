@@ -255,3 +255,6 @@ function drawPlayer(ctx, p, inv, shieldActive, nitroActive, frame) {
 function drawParticles(ctx, particles) {
   particles.forEach(p => {
     const a = p.life / p.maxLife;
+    ctx.globalAlpha = a;
+    ctx.shadowColor = p.color; ctx.shadowBlur = 5 * a;
+    ctx.beginPath(); ctx.arc(p.x, p.y, Math.max(0.1, p.r * a), 0, Math.PI * 2);
