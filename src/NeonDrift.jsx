@@ -231,3 +231,8 @@ function drawPlayer(ctx, p, inv, shieldActive, nitroActive, frame) {
 
   ctx.fillStyle = "rgba(0,0,0,0.72)";
   ctx.fillRect(-p.w / 2 + 5, -p.h / 2 + 6, p.w - 10, p.h * 0.34);
+  ctx.fillStyle = "rgba(0,245,255,0.12)";
+  ctx.fillRect(-p.w / 2 + 6, -p.h / 2 + 7, p.w - 12, p.h * 0.30);
+
+  ctx.fillStyle = "rgba(0,0,0,0.55)";
+  ctx.beginPath(); ctx.ellipse(-p.w / 2 + 5, p.h / 2 - 10, 7, 5, 0, 0, Math.PI * 2); ctx.fill();
