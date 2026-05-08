@@ -262,3 +262,7 @@ function drawParticles(ctx, particles) {
   });
   ctx.globalAlpha = 1; ctx.shadowBlur = 0;
 }
+
+function drawComboText(ctx, combos, frame) {
+  combos.forEach(c => {
+    const a = c.life / c.maxLife;
