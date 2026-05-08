@@ -224,3 +224,7 @@ function drawPlayer(ctx, p, inv, shieldActive, nitroActive, frame) {
   bg.addColorStop(0, "#00f0ff"); bg.addColorStop(0.45, "#0096b4"); bg.addColorStop(1, "#004455");
   ctx.fillStyle = bg;
   rr(ctx, -p.w / 2, -p.h / 2, p.w, p.h, 7); ctx.fill();
+
+   ctx.fillStyle = "rgba(255,0,110,0.85)";
+  ctx.fillRect(-p.w / 2 + 6, -p.h / 2 + 14, p.w - 12, 4);
+  ctx.fillRect(-p.w / 2 + 6, -p.h / 2 + 22, p.w - 12, 2);
