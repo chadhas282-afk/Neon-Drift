@@ -245,3 +245,9 @@ function drawPlayer(ctx, p, inv, shieldActive, nitroActive, frame) {
 
   ctx.fillStyle = C.pink; ctx.shadowColor = C.pink; ctx.shadowBlur = 12;
   ctx.fillRect(-p.w / 2 + 4, -p.h / 2 + 3, 7, 5); ctx.fillRect(p.w / 2 - 11, -p.h / 2 + 3, 7, 5);
+
+   ctx.shadowBlur = 0;
+  ctx.strokeStyle = "rgba(0,245,255,0.5)"; ctx.lineWidth = 1;
+  rr(ctx, -p.w / 2, -p.h / 2, p.w, p.h, 7); ctx.stroke();
+  ctx.restore();
+}
