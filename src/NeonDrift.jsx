@@ -202,3 +202,6 @@ function drawPlayer(ctx, p, inv, shieldActive, nitroActive, frame) {
 
   if (nitroActive) {
     for (let i = 0; i < 3; i++) {
+       const fw = 6 + Math.random() * 4; const fh = 8 + Math.random() * 14;
+      const fx = (i - 1) * 8; const fy = p.h / 2 + 2;
+      const fg = ctx.createLinearGradient(fx, fy, fx, fy + fh);
