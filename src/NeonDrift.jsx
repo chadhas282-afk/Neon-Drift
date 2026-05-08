@@ -266,3 +266,6 @@ function drawParticles(ctx, particles) {
 function drawComboText(ctx, combos, frame) {
   combos.forEach(c => {
     const a = c.life / c.maxLife;
+    ctx.globalAlpha = a;
+    ctx.font = `bold ${c.size}px 'Orbitron', monospace`;
+    ctx.textAlign = "center";
