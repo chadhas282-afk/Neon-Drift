@@ -197,3 +197,8 @@ function drawCoin(ctx, c, frame) {
 
 function drawPlayer(ctx, p, inv, shieldActive, nitroActive, frame) {
   if (inv > 0 && Math.floor(inv / 5) % 2 === 0) return;
+  ctx.save(); ctx.translate(p.x, p.y);
+  ctx.rotate(p.vx * 0.015);
+
+  if (nitroActive) {
+    for (let i = 0; i < 3; i++) {
