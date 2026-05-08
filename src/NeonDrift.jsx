@@ -205,3 +205,8 @@ function drawPlayer(ctx, p, inv, shieldActive, nitroActive, frame) {
        const fw = 6 + Math.random() * 4; const fh = 8 + Math.random() * 14;
       const fx = (i - 1) * 8; const fy = p.h / 2 + 2;
       const fg = ctx.createLinearGradient(fx, fy, fx, fy + fh);
+      fg.addColorStop(0, "#ffffff"); fg.addColorStop(0.3, "#ff6600"); fg.addColorStop(1, "transparent");
+      ctx.fillStyle = fg;
+      rr(ctx, fx - fw / 2, fy, fw, fh, fw / 2); ctx.fill();
+    }
+  }
