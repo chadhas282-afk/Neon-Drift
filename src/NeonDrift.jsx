@@ -217,3 +217,8 @@ function drawPlayer(ctx, p, inv, shieldActive, nitroActive, frame) {
     ctx.beginPath(); ctx.ellipse(0, 0, p.w / 2 + 10, p.h / 2 + 10, 0, 0, Math.PI * 2); ctx.stroke();
     ctx.shadowBlur = 0;
   }
+
+  ctx.shadowColor = C.cyan; ctx.shadowBlur = 18;
+
+  const bg = ctx.createLinearGradient(-p.w / 2, -p.h / 2, p.w / 2, p.h / 2);
+  bg.addColorStop(0, "#00f0ff"); bg.addColorStop(0.45, "#0096b4"); bg.addColorStop(1, "#004455");
