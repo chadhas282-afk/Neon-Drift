@@ -293,3 +293,7 @@ function drawHUDCanvas(ctx, g, frame) {
 function GlowBtn({ children, onClick, color = "#00f5ff", style = {} }) {
   const [hov, setHov] = useState(false);
   return (
+     <button onClick={onClick}
+      onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}
+      style={{
+        fontFamily: "'Orbitron',monospace", fontWeight: 700, letterSpacing: "0.25em",
