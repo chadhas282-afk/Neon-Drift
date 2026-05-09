@@ -279,3 +279,6 @@ function drawComboText(ctx, combos, frame) {
 function drawHUDCanvas(ctx, g, frame) {
   const cx2 = W - 30, cy2 = H - 38, r2 = 22;
   const speedRatio = Math.min(g.speed / 20, 1);
+  ctx.strokeStyle = "rgba(0,245,255,0.15)"; ctx.lineWidth = 4;
+  ctx.beginPath(); ctx.arc(cx2, cy2, r2, -Math.PI * 0.8, Math.PI * 0.8); ctx.stroke();
+  const grad = ctx.createLinearGradient(cx2 - r2, cy2, cx2 + r2, cy2);
