@@ -357,3 +357,6 @@ function TitleScreen({ onStart, leaderboard }) {
                 border: `1.5px solid ${diff === k ? v.color : "rgba(0,245,255,0.15)"}`,
                 background: diff === k ? `${v.color}18` : "transparent",
                 color: diff === k ? v.color : "rgba(0,245,255,0.35)",
+                cursor: "pointer", transition: "all 0.2s", textTransform: "uppercase",
+                boxShadow: diff === k ? `0 0 16px ${v.color}44` : "none",
+              }}>
