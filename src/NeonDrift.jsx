@@ -304,3 +304,7 @@ function GlowBtn({ children, onClick, color = "#00f5ff", style = {} }) {
       }}>{children}</button>
   );
 }
+
+function TitleScreen({ onStart, leaderboard }) {
+  const [diff, setDiff] = useState("pro");
+  const [tab, setTab] = useState("play");
