@@ -282,3 +282,5 @@ function drawHUDCanvas(ctx, g, frame) {
   ctx.strokeStyle = "rgba(0,245,255,0.15)"; ctx.lineWidth = 4;
   ctx.beginPath(); ctx.arc(cx2, cy2, r2, -Math.PI * 0.8, Math.PI * 0.8); ctx.stroke();
   const grad = ctx.createLinearGradient(cx2 - r2, cy2, cx2 + r2, cy2);
+  ctx.strokeStyle = grad; ctx.lineWidth = 4;
+  ctx.beginPath(); ctx.arc(cx2, cy2, r2, -Math.PI * 0.8, -Math.PI * 0.8 + speedRatio * Math.PI * 1.6); ctx.stroke();
