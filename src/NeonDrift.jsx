@@ -339,3 +339,7 @@ function TitleScreen({ onStart, leaderboard }) {
             background: tab === t ? "rgba(0,245,255,0.1)" : "transparent",
             color: tab === t ? C.cyan : "rgba(0,245,255,0.35)",
             borderRight: t === "play" ? "1px solid rgba(0,245,255,0.2)" : "none",
+             transition: "all 0.2s",
+          }}>{t === "play" ? "▶ RACE" : "🏆 LEADERBOARD"}</button>
+        ))}
+      </div>
