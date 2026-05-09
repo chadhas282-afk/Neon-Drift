@@ -319,3 +319,7 @@ function TitleScreen({ onStart, leaderboard }) {
         <div style={{
           fontFamily: "'Orbitron',monospace", fontWeight: 900,
           fontSize: "clamp(2rem,8vw,3.6rem)", letterSpacing: "0.12em", lineHeight: 1,
+           color: C.cyan, textShadow: `0 0 20px ${C.cyan},0 0 50px ${C.cyan},0 0 90px rgba(0,245,255,0.25)`,
+          animation: "logoFlicker 5s infinite",
+        }}>
+          NEON<span style={{ color: C.pink, textShadow: `0 0 20px ${C.pink},0 0 50px ${C.pink}` }}>DRIFT</span>
