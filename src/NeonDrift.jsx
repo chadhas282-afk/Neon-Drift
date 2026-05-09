@@ -326,3 +326,6 @@ function TitleScreen({ onStart, leaderboard }) {
            <span style={{ color: "rgba(0,245,255,0.35)", fontSize: "0.35em", letterSpacing: "0.5em", marginLeft: 6 }}>PRO</span>
         </div>
       </div>
+       <div style={{ fontSize: "0.6rem", letterSpacing: "0.5em", color: "rgba(0,245,255,0.3)", marginBottom: 24 }}>
+        SEASON 1 · 2026 CHAMPIONSHIP
+      </div>
