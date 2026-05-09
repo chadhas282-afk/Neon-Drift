@@ -323,3 +323,6 @@ function TitleScreen({ onStart, leaderboard }) {
           animation: "logoFlicker 5s infinite",
         }}>
           NEON<span style={{ color: C.pink, textShadow: `0 0 20px ${C.pink},0 0 50px ${C.pink}` }}>DRIFT</span>
+           <span style={{ color: "rgba(0,245,255,0.35)", fontSize: "0.35em", letterSpacing: "0.5em", marginLeft: 6 }}>PRO</span>
+        </div>
+      </div>
