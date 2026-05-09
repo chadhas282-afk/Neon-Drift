@@ -353,3 +353,7 @@ function TitleScreen({ onStart, leaderboard }) {
             {Object.entries(DIFF).map(([k, v]) => (
               <button key={k} onClick={() => setDiff(k)} style={{
                 flex: 1, padding: "10px 4px",
+                 fontFamily: "'Orbitron',monospace", fontSize: "0.6rem", letterSpacing: "0.1em",
+                border: `1.5px solid ${diff === k ? v.color : "rgba(0,245,255,0.15)"}`,
+                background: diff === k ? `${v.color}18` : "transparent",
+                color: diff === k ? v.color : "rgba(0,245,255,0.35)",
