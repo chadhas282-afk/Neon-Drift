@@ -287,3 +287,9 @@ function drawHUDCanvas(ctx, g, frame) {
   ctx.fillStyle = "rgba(0,245,255,0.7)"; ctx.font = "7px 'Orbitron',monospace";
   ctx.textAlign = "center"; ctx.fillText("KM/H", cx2, cy2 + 3);
   ctx.font = "bold 10px 'Orbitron',monospace"; ctx.fillStyle = C.cyan;
+   ctx.fillText(Math.floor(g.speed * 22), cx2, cy2 - 6);
+}
+
+function GlowBtn({ children, onClick, color = "#00f5ff", style = {} }) {
+  const [hov, setHov] = useState(false);
+  return (
