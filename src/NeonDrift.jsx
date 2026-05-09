@@ -156,10 +156,10 @@ function drawObstacle(ctx, o, frame) {
     ctx.fillRect(-o.w / 2 + 4, -o.h / 2 + 3, 6, 4);
     ctx.fillRect(o.w / 2 - 10, -o.h / 2 + 3, 6, 4);
 
-     ctx.shadowBlur = 0;
+    ctx.shadowBlur = 0;
     ctx.strokeStyle = "rgba(255,255,255,0.12)"; ctx.lineWidth = 1;
     rr(ctx, -o.w / 2, -o.h / 2, o.w, o.h, 6); ctx.stroke();
-      }
+  }
   ctx.restore();
 }
 
@@ -167,12 +167,12 @@ function drawPowerup(ctx, p, frame) {
   ctx.save(); ctx.translate(p.x, p.y);
   const pulse = Math.sin(frame * 0.08) * 3;
   const cfg = POWERUP_TYPES[p.type];
-   ctx.shadowColor = cfg.glow; ctx.shadowBlur = 16 + pulse;
+  ctx.shadowColor = cfg.glow; ctx.shadowBlur = 16 + pulse;
   ctx.strokeStyle = cfg.color; ctx.lineWidth = 2;
   ctx.beginPath();
   for (let i = 0; i < 6; i++) {
     const a = (i / 6) * Math.PI * 2 - Math.PI / 6;
-     const r = 14 + pulse * 0.3;
+    const r = 14 + pulse * 0.3;
     i === 0 ? ctx.moveTo(Math.cos(a) * r, Math.sin(a) * r) : ctx.lineTo(Math.cos(a) * r, Math.sin(a) * r);
   }
   ctx.closePath(); ctx.stroke();
@@ -202,7 +202,7 @@ function drawPlayer(ctx, p, inv, shieldActive, nitroActive, frame) {
 
   if (nitroActive) {
     for (let i = 0; i < 3; i++) {
-       const fw = 6 + Math.random() * 4; const fh = 8 + Math.random() * 14;
+      const fw = 6 + Math.random() * 4; const fh = 8 + Math.random() * 14;
       const fx = (i - 1) * 8; const fy = p.h / 2 + 2;
       const fg = ctx.createLinearGradient(fx, fy, fx, fy + fh);
       fg.addColorStop(0, "#ffffff"); fg.addColorStop(0.3, "#ff6600"); fg.addColorStop(1, "transparent");
@@ -213,7 +213,7 @@ function drawPlayer(ctx, p, inv, shieldActive, nitroActive, frame) {
   if (shieldActive) {
     ctx.shadowColor = C.cyan; ctx.shadowBlur = 20;
     ctx.strokeStyle = `rgba(0,245,255,${0.4 + 0.3 * Math.sin(frame * 0.15)})`;
-     ctx.lineWidth = 2.5;
+    ctx.lineWidth = 2.5;
     ctx.beginPath(); ctx.ellipse(0, 0, p.w / 2 + 10, p.h / 2 + 10, 0, 0, Math.PI * 2); ctx.stroke();
     ctx.shadowBlur = 0;
   }
@@ -225,7 +225,7 @@ function drawPlayer(ctx, p, inv, shieldActive, nitroActive, frame) {
   ctx.fillStyle = bg;
   rr(ctx, -p.w / 2, -p.h / 2, p.w, p.h, 7); ctx.fill();
 
-   ctx.fillStyle = "rgba(255,0,110,0.85)";
+  ctx.fillStyle = "rgba(255,0,110,0.85)";
   ctx.fillRect(-p.w / 2 + 6, -p.h / 2 + 14, p.w - 12, 4);
   ctx.fillRect(-p.w / 2 + 6, -p.h / 2 + 22, p.w - 12, 2);
 
@@ -246,7 +246,7 @@ function drawPlayer(ctx, p, inv, shieldActive, nitroActive, frame) {
   ctx.fillStyle = C.pink; ctx.shadowColor = C.pink; ctx.shadowBlur = 12;
   ctx.fillRect(-p.w / 2 + 4, -p.h / 2 + 3, 7, 5); ctx.fillRect(p.w / 2 - 11, -p.h / 2 + 3, 7, 5);
 
-   ctx.shadowBlur = 0;
+  ctx.shadowBlur = 0;
   ctx.strokeStyle = "rgba(0,245,255,0.5)"; ctx.lineWidth = 1;
   rr(ctx, -p.w / 2, -p.h / 2, p.w, p.h, 7); ctx.stroke();
   ctx.restore();
@@ -272,7 +272,7 @@ function drawComboText(ctx, combos, frame) {
     ctx.fillStyle = c.color;
     ctx.shadowColor = c.color; ctx.shadowBlur = 12;
     ctx.fillText(c.text, c.x, c.y);
-     });
+  });
   ctx.globalAlpha = 1; ctx.shadowBlur = 0;
 }
 
@@ -287,20 +287,20 @@ function drawHUDCanvas(ctx, g, frame) {
   ctx.fillStyle = "rgba(0,245,255,0.7)"; ctx.font = "7px 'Orbitron',monospace";
   ctx.textAlign = "center"; ctx.fillText("KM/H", cx2, cy2 + 3);
   ctx.font = "bold 10px 'Orbitron',monospace"; ctx.fillStyle = C.cyan;
-   ctx.fillText(Math.floor(g.speed * 22), cx2, cy2 - 6);
+  ctx.fillText(Math.floor(g.speed * 22), cx2, cy2 - 6);
 }
 
 function GlowBtn({ children, onClick, color = "#00f5ff", style = {} }) {
   const [hov, setHov] = useState(false);
   return (
-     <button onClick={onClick}
+    <button onClick={onClick}
       onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}
       style={{
         fontFamily: "'Orbitron',monospace", fontWeight: 700, letterSpacing: "0.25em",
         border: `1.5px solid ${color}`, background: hov ? color : "transparent",
         color: hov ? "#02020e" : color, cursor: "pointer", transition: "all 0.18s",
         boxShadow: hov ? `0 0 30px ${color},0 0 60px ${color}44` : `0 0 10px ${color}33`,
-         textTransform: "uppercase", ...style,
+        textTransform: "uppercase", ...style,
       }}>{children}</button>
   );
 }
@@ -314,19 +314,19 @@ function TitleScreen({ onStart, leaderboard }) {
       width: "100%", maxWidth: W, display: "flex", flexDirection: "column",
       alignItems: "center", padding: "16px 12px",
       fontFamily: "'Share Tech Mono',monospace", color: C.cyan,
-       }}>
+    }}>
       <div style={{ position: "relative", marginBottom: 4 }}>
         <div style={{
           fontFamily: "'Orbitron',monospace", fontWeight: 900,
           fontSize: "clamp(2rem,8vw,3.6rem)", letterSpacing: "0.12em", lineHeight: 1,
-           color: C.cyan, textShadow: `0 0 20px ${C.cyan},0 0 50px ${C.cyan},0 0 90px rgba(0,245,255,0.25)`,
+          color: C.cyan, textShadow: `0 0 20px ${C.cyan},0 0 50px ${C.cyan},0 0 90px rgba(0,245,255,0.25)`,
           animation: "logoFlicker 5s infinite",
         }}>
           NEON<span style={{ color: C.pink, textShadow: `0 0 20px ${C.pink},0 0 50px ${C.pink}` }}>DRIFT</span>
-           <span style={{ color: "rgba(0,245,255,0.35)", fontSize: "0.35em", letterSpacing: "0.5em", marginLeft: 6 }}>PRO</span>
+          <span style={{ color: "rgba(0,245,255,0.35)", fontSize: "0.35em", letterSpacing: "0.5em", marginLeft: 6 }}>PRO</span>
         </div>
       </div>
-       <div style={{ fontSize: "0.6rem", letterSpacing: "0.5em", color: "rgba(0,245,255,0.3)", marginBottom: 24 }}>
+      <div style={{ fontSize: "0.6rem", letterSpacing: "0.5em", color: "rgba(0,245,255,0.3)", marginBottom: 24 }}>
         SEASON 1 · 2026 CHAMPIONSHIP
       </div>
 
@@ -339,7 +339,11 @@ function TitleScreen({ onStart, leaderboard }) {
             background: tab === t ? "rgba(0,245,255,0.1)" : "transparent",
             color: tab === t ? C.cyan : "rgba(0,245,255,0.35)",
             borderRight: t === "play" ? "1px solid rgba(0,245,255,0.2)" : "none",
-             transition: "all 0.2s",
+            transition: "all 0.2s",
           }}>{t === "play" ? "▶ RACE" : "🏆 LEADERBOARD"}</button>
         ))}
       </div>
+
+      {tab === "play" && (
+        <>
+          <div style={{ fontSize: "0.55rem", letterSpacing: "0.35em", color: "rgba(0,245,255,0.35)", marginBottom: 10, fontFamily: "'Orbitron',monospace" }}></div>
