@@ -336,3 +336,6 @@ function TitleScreen({ onStart, leaderboard }) {
             flex: 1, padding: "10px 0",
             fontFamily: "'Orbitron',monospace", fontSize: "0.65rem", letterSpacing: "0.2em",
             border: "none", cursor: "pointer", textTransform: "uppercase",
+            background: tab === t ? "rgba(0,245,255,0.1)" : "transparent",
+            color: tab === t ? C.cyan : "rgba(0,245,255,0.35)",
+            borderRight: t === "play" ? "1px solid rgba(0,245,255,0.2)" : "none",
