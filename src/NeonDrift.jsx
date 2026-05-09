@@ -314,3 +314,8 @@ function TitleScreen({ onStart, leaderboard }) {
       width: "100%", maxWidth: W, display: "flex", flexDirection: "column",
       alignItems: "center", padding: "16px 12px",
       fontFamily: "'Share Tech Mono',monospace", color: C.cyan,
+       }}>
+      <div style={{ position: "relative", marginBottom: 4 }}>
+        <div style={{
+          fontFamily: "'Orbitron',monospace", fontWeight: 900,
+          fontSize: "clamp(2rem,8vw,3.6rem)", letterSpacing: "0.12em", lineHeight: 1,
