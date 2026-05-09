@@ -308,3 +308,9 @@ function GlowBtn({ children, onClick, color = "#00f5ff", style = {} }) {
 function TitleScreen({ onStart, leaderboard }) {
   const [diff, setDiff] = useState("pro");
   const [tab, setTab] = useState("play");
+
+  return (
+    <div style={{
+      width: "100%", maxWidth: W, display: "flex", flexDirection: "column",
+      alignItems: "center", padding: "16px 12px",
+      fontFamily: "'Share Tech Mono',monospace", color: C.cyan,
