@@ -329,3 +329,6 @@ function TitleScreen({ onStart, leaderboard }) {
        <div style={{ fontSize: "0.6rem", letterSpacing: "0.5em", color: "rgba(0,245,255,0.3)", marginBottom: 24 }}>
         SEASON 1 · 2026 CHAMPIONSHIP
       </div>
+
+      <div style={{ display: "flex", gap: 0, marginBottom: 20, border: "1px solid rgba(0,245,255,0.2)", width: "100%" }}>
+        {["play", "board"].map(t => (
