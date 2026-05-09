@@ -342,8 +342,14 @@ function TitleScreen({ onStart, leaderboard }) {
             transition: "all 0.2s",
           }}>{t === "play" ? "▶ RACE" : "🏆 LEADERBOARD"}</button>
         ))}
-      </div>
+       </div>
 
       {tab === "play" && (
         <>
-          <div style={{ fontSize: "0.55rem", letterSpacing: "0.35em", color: "rgba(0,245,255,0.35)", marginBottom: 10, fontFamily: "'Orbitron',monospace" }}></div>
+          <div style={{ fontSize: "0.55rem", letterSpacing: "0.35em", color: "rgba(0,245,255,0.35)", marginBottom: 10, fontFamily: "'Orbitron',monospace" }}>
+            SELECT DIFFICULTY
+          </div>
+          <div style={{ display: "flex", gap: 8, marginBottom: 24, width: "100%" }}>
+            {Object.entries(DIFF).map(([k, v]) => (
+              <button key={k} onClick={() => setDiff(k)} style={{
+                flex: 1, padding: "10px 4px",
