@@ -275,3 +275,7 @@ function drawComboText(ctx, combos, frame) {
      });
   ctx.globalAlpha = 1; ctx.shadowBlur = 0;
 }
+
+function drawHUDCanvas(ctx, g, frame) {
+  const cx2 = W - 30, cy2 = H - 38, r2 = 22;
+  const speedRatio = Math.min(g.speed / 20, 1);
