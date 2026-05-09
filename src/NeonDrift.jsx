@@ -297,3 +297,6 @@ function GlowBtn({ children, onClick, color = "#00f5ff", style = {} }) {
       onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}
       style={{
         fontFamily: "'Orbitron',monospace", fontWeight: 700, letterSpacing: "0.25em",
+        border: `1.5px solid ${color}`, background: hov ? color : "transparent",
+        color: hov ? "#02020e" : color, cursor: "pointer", transition: "all 0.18s",
+        boxShadow: hov ? `0 0 30px ${color},0 0 60px ${color}44` : `0 0 10px ${color}33`,
