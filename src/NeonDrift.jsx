@@ -332,3 +332,7 @@ function TitleScreen({ onStart, leaderboard }) {
 
       <div style={{ display: "flex", gap: 0, marginBottom: 20, border: "1px solid rgba(0,245,255,0.2)", width: "100%" }}>
         {["play", "board"].map(t => (
+          <button key={t} onClick={() => setTab(t)} style={{
+            flex: 1, padding: "10px 0",
+            fontFamily: "'Orbitron',monospace", fontSize: "0.65rem", letterSpacing: "0.2em",
+            border: "none", cursor: "pointer", textTransform: "uppercase",
