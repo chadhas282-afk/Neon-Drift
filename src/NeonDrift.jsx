@@ -364,3 +364,9 @@ function TitleScreen({ onStart, leaderboard }) {
                 <div style={{ fontSize: "0.45rem", marginTop: 3, opacity: 0.7 }}>
                   {k === "rookie" ? "5 LIVES" : k === "pro" ? "3 LIVES" : "2 LIVES"}
                 </div>
+                 </button>
+            ))}
+          </div>
+          <GlowBtn onClick={() => onStart(diff)} color={DIFF[diff].color} style={{ fontSize: "0.85rem", padding: "14px 44px", marginBottom: 20 }}>
+            START RACE
+          </GlowBtn>
