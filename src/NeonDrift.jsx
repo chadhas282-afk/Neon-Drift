@@ -383,3 +383,7 @@ function TitleScreen({ onStart, leaderboard }) {
             <div style={{ textAlign: "center", color: "rgba(0,245,255,0.3)", fontSize: "0.7rem", padding: "30px 0" }}>
               No races yet. Get on the track!
             </div>
+            ) : (
+            leaderboard.map((e, i) => (
+              <div key={i} style={{
+                display: "flex", alignItems: "center", gap: 10,
