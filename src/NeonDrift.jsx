@@ -374,3 +374,8 @@ function TitleScreen({ onStart, leaderboard }) {
             <span style={{ color: "rgba(0,245,255,0.55)" }}>← → / A D</span> steer &nbsp;·&nbsp; <span style={{ color: "rgba(0,245,255,0.55)" }}>P / SPACE</span> pause<br />
             Collect <span style={{ color: C.yellow }}>coins</span> & <span style={{ color: C.cyan }}>power-ups</span> · Build combos for multipliers
           </div>
+          </>
+      )}
+
+      {tab === "board" && (
+        <div style={{ width: "100%" }}></div>
