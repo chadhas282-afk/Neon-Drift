@@ -394,3 +394,5 @@ function TitleScreen({ onStart, leaderboard }) {
                 <span style={{
                   fontFamily: "'Orbitron',monospace", fontWeight: 700,
                   fontSize: "0.85rem", width: 24, textAlign: "center",
+                   color: i === 0 ? C.yellow : i === 1 ? "#c0c0c0" : i === 2 ? "#cd7f32" : "rgba(0,245,255,0.4)",
+                }}>{i + 1}</span>
