@@ -387,3 +387,7 @@ function TitleScreen({ onStart, leaderboard }) {
             leaderboard.map((e, i) => (
               <div key={i} style={{
                 display: "flex", alignItems: "center", gap: 10,
+                padding: "8px 10px", marginBottom: 4,
+                background: i === 0 ? "rgba(255,190,11,0.08)" : "rgba(0,245,255,0.03)",
+                border: `1px solid ${i === 0 ? "rgba(255,190,11,0.3)" : i === 1 ? "rgba(200,200,200,0.2)" : i === 2 ? "rgba(180,120,60,0.2)" : "rgba(0,245,255,0.08)"}`,
+              }}>
