@@ -407,3 +407,6 @@ function TitleScreen({ onStart, leaderboard }) {
     </div>
   );
 }
+
+function HUD({ score, speed, lives, maxLives, coins, combo, multiplier, activeShield, activeNitro, activeMagnet, activeSlow, shieldT, nitroT, magnetT, slowT, diffColor }) {
+  return (
