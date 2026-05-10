@@ -360,3 +360,7 @@ function TitleScreen({ onStart, leaderboard }) {
                 cursor: "pointer", transition: "all 0.2s", textTransform: "uppercase",
                 boxShadow: diff === k ? `0 0 16px ${v.color}44` : "none",
               }}>
+                 <div>{v.label}</div>
+                <div style={{ fontSize: "0.45rem", marginTop: 3, opacity: 0.7 }}>
+                  {k === "rookie" ? "5 LIVES" : k === "pro" ? "3 LIVES" : "2 LIVES"}
+                </div>
