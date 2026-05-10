@@ -370,3 +370,7 @@ function TitleScreen({ onStart, leaderboard }) {
           <GlowBtn onClick={() => onStart(diff)} color={DIFF[diff].color} style={{ fontSize: "0.85rem", padding: "14px 44px", marginBottom: 20 }}>
             START RACE
           </GlowBtn>
+          <div style={{ fontSize: "0.6rem", color: "rgba(0,245,255,0.25)", letterSpacing: "0.08em", lineHeight: 2.2, textAlign: "center" }}>
+            <span style={{ color: "rgba(0,245,255,0.55)" }}>← → / A D</span> steer &nbsp;·&nbsp; <span style={{ color: "rgba(0,245,255,0.55)" }}>P / SPACE</span> pause<br />
+            Collect <span style={{ color: C.yellow }}>coins</span> & <span style={{ color: C.cyan }}>power-ups</span> · Build combos for multipliers
+          </div>
