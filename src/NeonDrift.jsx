@@ -210,6 +210,7 @@ function drawPlayer(ctx, p, inv, shieldActive, nitroActive, frame) {
       rr(ctx, fx - fw / 2, fy, fw, fh, fw / 2); ctx.fill();
     }
   }
+
   if (shieldActive) {
     ctx.shadowColor = C.cyan; ctx.shadowBlur = 20;
     ctx.strokeStyle = `rgba(0,245,255,${0.4 + 0.3 * Math.sin(frame * 0.15)})`;
@@ -282,6 +283,7 @@ function drawHUDCanvas(ctx, g, frame) {
   ctx.strokeStyle = "rgba(0,245,255,0.15)"; ctx.lineWidth = 4;
   ctx.beginPath(); ctx.arc(cx2, cy2, r2, -Math.PI * 0.8, Math.PI * 0.8); ctx.stroke();
   const grad = ctx.createLinearGradient(cx2 - r2, cy2, cx2 + r2, cy2);
+  grad.addColorStop(0, C.green); grad.addColorStop(0.5, C.yellow); grad.addColorStop(1, C.pink);
   ctx.strokeStyle = grad; ctx.lineWidth = 4;
   ctx.beginPath(); ctx.arc(cx2, cy2, r2, -Math.PI * 0.8, -Math.PI * 0.8 + speedRatio * Math.PI * 1.6); ctx.stroke();
   ctx.fillStyle = "rgba(0,245,255,0.7)"; ctx.font = "7px 'Orbitron',monospace";
@@ -342,7 +344,7 @@ function TitleScreen({ onStart, leaderboard }) {
             transition: "all 0.2s",
           }}>{t === "play" ? "▶ RACE" : "🏆 LEADERBOARD"}</button>
         ))}
-       </div>
+      </div>
 
       {tab === "play" && (
         <>
@@ -353,18 +355,18 @@ function TitleScreen({ onStart, leaderboard }) {
             {Object.entries(DIFF).map(([k, v]) => (
               <button key={k} onClick={() => setDiff(k)} style={{
                 flex: 1, padding: "10px 4px",
-                 fontFamily: "'Orbitron',monospace", fontSize: "0.6rem", letterSpacing: "0.1em",
+                fontFamily: "'Orbitron',monospace", fontSize: "0.6rem", letterSpacing: "0.1em",
                 border: `1.5px solid ${diff === k ? v.color : "rgba(0,245,255,0.15)"}`,
                 background: diff === k ? `${v.color}18` : "transparent",
                 color: diff === k ? v.color : "rgba(0,245,255,0.35)",
                 cursor: "pointer", transition: "all 0.2s", textTransform: "uppercase",
                 boxShadow: diff === k ? `0 0 16px ${v.color}44` : "none",
               }}>
-                 <div>{v.label}</div>
+                <div>{v.label}</div>
                 <div style={{ fontSize: "0.45rem", marginTop: 3, opacity: 0.7 }}>
                   {k === "rookie" ? "5 LIVES" : k === "pro" ? "3 LIVES" : "2 LIVES"}
                 </div>
-                 </button>
+              </button>
             ))}
           </div>
           <GlowBtn onClick={() => onStart(diff)} color={DIFF[diff].color} style={{ fontSize: "0.85rem", padding: "14px 44px", marginBottom: 20 }}>
@@ -374,7 +376,7 @@ function TitleScreen({ onStart, leaderboard }) {
             <span style={{ color: "rgba(0,245,255,0.55)" }}>← → / A D</span> steer &nbsp;·&nbsp; <span style={{ color: "rgba(0,245,255,0.55)" }}>P / SPACE</span> pause<br />
             Collect <span style={{ color: C.yellow }}>coins</span> & <span style={{ color: C.cyan }}>power-ups</span> · Build combos for multipliers
           </div>
-          </>
+        </>
       )}
 
       {tab === "board" && (
@@ -383,7 +385,7 @@ function TitleScreen({ onStart, leaderboard }) {
             <div style={{ textAlign: "center", color: "rgba(0,245,255,0.3)", fontSize: "0.7rem", padding: "30px 0" }}>
               No races yet. Get on the track!
             </div>
-            ) : (
+          ) : (
             leaderboard.map((e, i) => (
               <div key={i} style={{
                 display: "flex", alignItems: "center", gap: 10,
@@ -394,7 +396,7 @@ function TitleScreen({ onStart, leaderboard }) {
                 <span style={{
                   fontFamily: "'Orbitron',monospace", fontWeight: 700,
                   fontSize: "0.85rem", width: 24, textAlign: "center",
-                   color: i === 0 ? C.yellow : i === 1 ? "#c0c0c0" : i === 2 ? "#cd7f32" : "rgba(0,245,255,0.4)",
+                  color: i === 0 ? C.yellow : i === 1 ? "#c0c0c0" : i === 2 ? "#cd7f32" : "rgba(0,245,255,0.4)",
                 }}>{i + 1}</span>
                 <span style={{ flex: 1, fontSize: "0.7rem", color: C.cyan }}>{e.name}</span>
                 <span style={{ fontSize: "0.65rem", color: "rgba(0,245,255,0.5)" }}>{DIFF[e.diff]?.label || e.diff}</span>
@@ -414,7 +416,7 @@ function HUD({ score, speed, lives, maxLives, coins, combo, multiplier, activeSh
       width: "100%", maxWidth: W, padding: "8px 6px 4px",
       fontFamily: "'Share Tech Mono',monospace",
     }}>
-       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 4 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 4 }}>
         <div>
           <div style={{ fontSize: "0.48rem", letterSpacing: "0.3em", color: "rgba(0,245,255,0.35)", textTransform: "uppercase" }}>Score</div>
           <div style={{ fontFamily: "'Orbitron',monospace", fontWeight: 900, fontSize: "1.4rem", color: C.cyan, textShadow: `0 0 12px ${C.cyan}`, lineHeight: 1 }}>
@@ -431,5 +433,16 @@ function HUD({ score, speed, lives, maxLives, coins, combo, multiplier, activeSh
             </div>
           </div>
         )}
+
         <div style={{ textAlign: "right" }}>
           <div style={{ fontSize: "0.48rem", letterSpacing: "0.3em", color: "rgba(0,245,255,0.35)", textTransform: "uppercase", marginBottom: 2 }}>Lives</div>
+          <div style={{ fontSize: "1rem", lineHeight: 1, letterSpacing: 2 }}>
+            {Array.from({ length: Math.max(maxLives, 3) }, (_, i) => (
+              <span key={i} style={{ color: i < lives ? C.pink : "rgba(255,0,110,0.2)", textShadow: i < lives ? `0 0 8px ${C.pink}` : "none" }}>♥</span>
+            ))}
+          </div>
+          <div style={{ fontSize: "0.48rem", color: C.yellow, marginTop: 1 }}>
+            💰 {coins}
+          </div>
+        </div>
+      </div>
