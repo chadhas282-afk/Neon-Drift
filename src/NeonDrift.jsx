@@ -426,3 +426,8 @@ function HUD({ score, speed, lives, maxLives, coins, combo, multiplier, activeSh
         {combo > 0 && (
           <div style={{ textAlign: "center" }}>
             <div style={{ fontSize: "0.45rem", letterSpacing: "0.2em", color: "rgba(255,190,11,0.5)", textTransform: "uppercase", marginBottom: 2 }}>Combo</div>
+            <div style={{ fontFamily: "'Orbitron',monospace", fontWeight: 900, fontSize: "1.6rem", color: C.yellow, textShadow: `0 0 15px ${C.yellow}`, lineHeight: 1 }}>
+              {combo}
+            </div>
+          </div>
+        )}
