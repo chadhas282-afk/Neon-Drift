@@ -416,3 +416,4 @@ function HUD({ score, speed, lives, maxLives, coins, combo, multiplier, activeSh
     }}>
        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 4 }}>
         <div>
+          <div style={{ fontSize: "0.48rem", letterSpacing: "0.3em", color: "rgba(0,245,255,0.35)", textTransform: "uppercase" }}>Score</div>
