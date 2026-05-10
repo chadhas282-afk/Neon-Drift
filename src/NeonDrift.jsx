@@ -378,4 +378,8 @@ function TitleScreen({ onStart, leaderboard }) {
       )}
 
       {tab === "board" && (
-        <div style={{ width: "100%" }}></div>
+        <div style={{ width: "100%" }}>
+          {leaderboard.length === 0 ? (
+            <div style={{ textAlign: "center", color: "rgba(0,245,255,0.3)", fontSize: "0.7rem", padding: "30px 0" }}>
+              No races yet. Get on the track!
+            </div>
