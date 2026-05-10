@@ -414,3 +414,5 @@ function HUD({ score, speed, lives, maxLives, coins, combo, multiplier, activeSh
       width: "100%", maxWidth: W, padding: "8px 6px 4px",
       fontFamily: "'Share Tech Mono',monospace",
     }}>
+       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 4 }}>
+        <div>
