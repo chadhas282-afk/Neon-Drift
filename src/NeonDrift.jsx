@@ -398,3 +398,12 @@ function TitleScreen({ onStart, leaderboard }) {
                 }}>{i + 1}</span>
                 <span style={{ flex: 1, fontSize: "0.7rem", color: C.cyan }}>{e.name}</span>
                 <span style={{ fontSize: "0.65rem", color: "rgba(0,245,255,0.5)" }}>{DIFF[e.diff]?.label || e.diff}</span>
+                <span style={{ fontFamily: "'Orbitron',monospace", fontWeight: 700, fontSize: "0.85rem", color: C.yellow }}>{e.score.toLocaleString()}</span>
+              </div>
+            ))
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
