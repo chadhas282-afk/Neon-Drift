@@ -422,3 +422,7 @@ function HUD({ score, speed, lives, maxLives, coins, combo, multiplier, activeSh
           </div>
           {combo > 1 && <div style={{ fontSize: "0.55rem", color: C.yellow, marginTop: 1 }}>x{multiplier} MULTIPLIER</div>}
         </div>
+
+        {combo > 0 && (
+          <div style={{ textAlign: "center" }}>
+            <div style={{ fontSize: "0.45rem", letterSpacing: "0.2em", color: "rgba(255,190,11,0.5)", textTransform: "uppercase", marginBottom: 2 }}>Combo</div>
