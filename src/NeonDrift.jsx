@@ -417,3 +417,8 @@ function HUD({ score, speed, lives, maxLives, coins, combo, multiplier, activeSh
        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 4 }}>
         <div>
           <div style={{ fontSize: "0.48rem", letterSpacing: "0.3em", color: "rgba(0,245,255,0.35)", textTransform: "uppercase" }}>Score</div>
+          <div style={{ fontFamily: "'Orbitron',monospace", fontWeight: 900, fontSize: "1.4rem", color: C.cyan, textShadow: `0 0 12px ${C.cyan}`, lineHeight: 1 }}>
+            {score.toLocaleString()}
+          </div>
+          {combo > 1 && <div style={{ fontSize: "0.55rem", color: C.yellow, marginTop: 1 }}>x{multiplier} MULTIPLIER</div>}
+        </div>
