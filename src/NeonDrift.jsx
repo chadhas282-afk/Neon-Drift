@@ -396,3 +396,5 @@ function TitleScreen({ onStart, leaderboard }) {
                   fontSize: "0.85rem", width: 24, textAlign: "center",
                    color: i === 0 ? C.yellow : i === 1 ? "#c0c0c0" : i === 2 ? "#cd7f32" : "rgba(0,245,255,0.4)",
                 }}>{i + 1}</span>
+                <span style={{ flex: 1, fontSize: "0.7rem", color: C.cyan }}>{e.name}</span>
+                <span style={{ fontSize: "0.65rem", color: "rgba(0,245,255,0.5)" }}>{DIFF[e.diff]?.label || e.diff}</span>
