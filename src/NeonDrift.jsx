@@ -410,3 +410,7 @@ function TitleScreen({ onStart, leaderboard }) {
 
 function HUD({ score, speed, lives, maxLives, coins, combo, multiplier, activeShield, activeNitro, activeMagnet, activeSlow, shieldT, nitroT, magnetT, slowT, diffColor }) {
   return (
+    <div style={{
+      width: "100%", maxWidth: W, padding: "8px 6px 4px",
+      fontFamily: "'Share Tech Mono',monospace",
+    }}>
