@@ -506,7 +506,7 @@ function Overlay({ type, score, best, coins, diff, onResume, onMenu, onSubmit, p
             ))}
           </div>
 
- {!submitted ? (
+         {!submitted ? (
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8, width: "100%", maxWidth: 220 }}>
               <div style={{ fontSize: "0.55rem", letterSpacing: "0.2em", color: "rgba(0,245,255,0.4)" }}>ENTER YOUR NAME</div>
               <input
@@ -515,3 +515,9 @@ function Overlay({ type, score, best, coins, diff, onResume, onMenu, onSubmit, p
                 onChange={e => setPlayerName(e.target.value.toUpperCase())}
                 placeholder="PILOT"
                 style={{
+                   width: "100%", padding: "8px 12px",
+                  fontFamily: "'Orbitron',monospace", fontWeight: 700, fontSize: "0.9rem",
+                  background: "rgba(0,245,255,0.05)", border: "1px solid rgba(0,245,255,0.3)",
+                  color: C.cyan, textAlign: "center", letterSpacing: "0.2em", outline: "none",
+                }}
+              />
