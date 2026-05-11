@@ -525,3 +525,8 @@ function Overlay({ type, score, best, coins, diff, onResume, onMenu, onSubmit, p
             SUBMIT SCORE
           </GlowBtn>
         </div>
+         ) : (
+            <div style={{ fontSize: "0.65rem", color: C.green, letterSpacing: "0.15em" }}>✓ SCORE SAVED TO LEADERBOARD</div>
+          )}
+        </>
+      )}
