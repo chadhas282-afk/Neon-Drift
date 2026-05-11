@@ -511,3 +511,7 @@ function Overlay({ type, score, best, coins, diff, onResume, onMenu, onSubmit, p
               <div style={{ fontSize: "0.55rem", letterSpacing: "0.2em", color: "rgba(0,245,255,0.4)" }}>ENTER YOUR NAME</div>
               <input
                 maxLength={12}
+                value={playerName}
+                onChange={e => setPlayerName(e.target.value.toUpperCase())}
+                placeholder="PILOT"
+                style={{
