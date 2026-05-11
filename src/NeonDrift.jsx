@@ -484,4 +484,8 @@ function Overlay({ type, score, best, coins, diff, onResume, onMenu, onSubmit, p
     <div style={{
       position: "absolute", inset: 0, background: "rgba(2,2,14,0.92)", backdropFilter: "blur(6px)",
       display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-      
+      gap: 12, zIndex: 10, fontFamily: "'Share Tech Mono',monospace",
+    }}>
+      <div style={{
+        fontFamily: "'Orbitron',monospace", fontWeight: 900, fontSize: "1.8rem", letterSpacing: "0.2em",
+        color: isOver ? C.pink : C.cyan, textShadow: `0 0 20px ${isOver ? C.pink : C.cyan}`,
