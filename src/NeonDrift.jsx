@@ -505,3 +505,9 @@ function Overlay({ type, score, best, coins, diff, onResume, onMenu, onSubmit, p
               </div>
             ))}
           </div>
+
+ {!submitted ? (
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8, width: "100%", maxWidth: 220 }}>
+              <div style={{ fontSize: "0.55rem", letterSpacing: "0.2em", color: "rgba(0,245,255,0.4)" }}>ENTER YOUR NAME</div>
+              <input
+                maxLength={12}
