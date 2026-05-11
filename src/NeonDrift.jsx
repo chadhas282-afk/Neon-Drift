@@ -446,3 +446,9 @@ function HUD({ score, speed, lives, maxLives, coins, combo, multiplier, activeSh
           </div>
         </div>
       </div>
+
+      {(activeShield || activeNitro || activeMagnet || activeSlow) && (
+        <div style={{ display: "flex", gap: 6, marginTop: 2 }}>
+          {[
+            { active: activeShield, t: shieldT, type: "shield" },
+            { active: activeNitro, t: nitroT, type: "nitro" },
