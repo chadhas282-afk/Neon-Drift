@@ -501,4 +501,7 @@ function Overlay({ type, score, best, coins, diff, onResume, onMenu, onSubmit, p
                ].map(({ label, val, color }) => (
               <div key={label} style={{ textAlign: "center" }}>
                 <div style={{ fontSize: "0.5rem", letterSpacing: "0.25em", color: "rgba(0,245,255,0.35)", textTransform: "uppercase" }}>{label}</div>
-                
+                <div style={{ fontFamily: "'Orbitron',monospace", fontWeight: 700, fontSize: "1rem", color, textShadow: `0 0 8px ${color}` }}>{val}</div>
+              </div>
+            ))}
+          </div>
