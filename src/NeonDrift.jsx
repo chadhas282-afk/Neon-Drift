@@ -462,11 +462,11 @@ function HUD({ score, speed, lives, maxLives, coins, combo, multiplier, activeSh
                 border: `1px solid ${cfg.color}66`, background: `${cfg.color}11`,
                 borderRadius: 2,
               }}>
-                 <span style={{ fontSize: "0.8rem" }}>{cfg.symbol}</span>
+                <span style={{ fontSize: "0.8rem" }}>{cfg.symbol}</span>
                 <div style={{ width: 40, height: 3, background: "rgba(255,255,255,0.1)", borderRadius: 2, overflow: "hidden" }}>
                   <div style={{ height: "100%", background: cfg.color, width: `${(p.t / POWERUP_TYPES[p.type].duration) * 100}%`, transition: "width 0.1s", boxShadow: `0 0 6px ${cfg.color}` }} />
                 </div>
-                 </div>
+              </div>
             );
           })}
         </div>
@@ -489,8 +489,12 @@ function Overlay({ type, score, best, coins, diff, onResume, onMenu, onSubmit, p
       <div style={{
         fontFamily: "'Orbitron',monospace", fontWeight: 900, fontSize: "1.8rem", letterSpacing: "0.2em",
         color: isOver ? C.pink : C.cyan, textShadow: `0 0 20px ${isOver ? C.pink : C.cyan}`,
-         }}>{isOver ? "GAME OVER" : "PAUSED"}</div>
+      }}>{isOver ? "GAME OVER" : "PAUSED"}</div>
 
       {isOver && (
         <>
           <div style={{ display: "flex", gap: 24, margin: "4px 0" }}></div>
+           {[
+              { label: "Score", val: score.toLocaleString(), color: C.cyan },
+              { label: "Best", val: best.toLocaleString(), color: C.yellow },
+              { label: "Coins", val: coins, color: C.yellow },
