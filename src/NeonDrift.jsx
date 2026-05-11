@@ -466,3 +466,11 @@ function HUD({ score, speed, lives, maxLives, coins, combo, multiplier, activeSh
                 <div style={{ width: 40, height: 3, background: "rgba(255,255,255,0.1)", borderRadius: 2, overflow: "hidden" }}>
                   <div style={{ height: "100%", background: cfg.color, width: `${(p.t / POWERUP_TYPES[p.type].duration) * 100}%`, transition: "width 0.1s", boxShadow: `0 0 6px ${cfg.color}` }} />
                 </div>
+                 </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
