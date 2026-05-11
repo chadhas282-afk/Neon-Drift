@@ -498,3 +498,7 @@ function Overlay({ type, score, best, coins, diff, onResume, onMenu, onSubmit, p
               { label: "Score", val: score.toLocaleString(), color: C.cyan },
               { label: "Best", val: best.toLocaleString(), color: C.yellow },
               { label: "Coins", val: coins, color: C.yellow },
+               ].map(({ label, val, color }) => (
+              <div key={label} style={{ textAlign: "center" }}>
+                <div style={{ fontSize: "0.5rem", letterSpacing: "0.25em", color: "rgba(0,245,255,0.35)", textTransform: "uppercase" }}>{label}</div>
+                
