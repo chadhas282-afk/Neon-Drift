@@ -474,3 +474,8 @@ function HUD({ score, speed, lives, maxLives, coins, combo, multiplier, activeSh
     </div>
   );
 }
+
+function Overlay({ type, score, best, coins, diff, onResume, onMenu, onSubmit, playerName, setPlayerName }) {
+  const isOver = type === "gameover";
+  const [submitted, setSubmitted] = useState(false);
+  const handleSubmit = () => { onSubmit(playerName || "PILOT"); setSubmitted(true); };
