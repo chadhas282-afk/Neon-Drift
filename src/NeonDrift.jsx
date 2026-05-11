@@ -530,3 +530,11 @@ function Overlay({ type, score, best, coins, diff, onResume, onMenu, onSubmit, p
           )}
         </>
       )}
+
+ {!isOver && <div style={{ fontSize: "0.65rem", color: "rgba(0,245,255,0.4)", letterSpacing: "0.12em" }}>Score {score.toLocaleString()}</div>}
+
+      {!isOver && <GlowBtn onClick={onResume} color={C.cyan} style={{ fontSize: "0.75rem", padding: "10px 30px" }}>RESUME</GlowBtn>}
+      <GlowBtn onClick={onMenu} color="rgba(0,245,255,0.4)" style={{ fontSize: "0.7rem", padding: "8px 24px" }}>MAIN MENU</GlowBtn>
+    </div>
+  );
+}
