@@ -494,30 +494,34 @@ function Overlay({ type, score, best, coins, diff, onResume, onMenu, onSubmit, p
       {isOver && (
         <>
           <div style={{ display: "flex", gap: 24, margin: "4px 0" }}></div>
-           {[
-              { label: "Score", val: score.toLocaleString(), color: C.cyan },
-              { label: "Best", val: best.toLocaleString(), color: C.yellow },
-              { label: "Coins", val: coins, color: C.yellow },
-               ].map(({ label, val, color }) => (
-              <div key={label} style={{ textAlign: "center" }}>
-                <div style={{ fontSize: "0.5rem", letterSpacing: "0.25em", color: "rgba(0,245,255,0.35)", textTransform: "uppercase" }}>{label}</div>
-                <div style={{ fontFamily: "'Orbitron',monospace", fontWeight: 700, fontSize: "1rem", color, textShadow: `0 0 8px ${color}` }}>{val}</div>
-              </div>
-            ))}
-          </div>
+          {[
+            { label: "Score", val: score.toLocaleString(), color: C.cyan },
+            { label: "Best", val: best.toLocaleString(), color: C.yellow },
+            { label: "Coins", val: coins, color: C.yellow },
+          ].map(({ label, val, color }) => (
+            <div key={label} style={{ textAlign: "center" }}>
+              <div style={{ fontSize: "0.5rem", letterSpacing: "0.25em", color: "rgba(0,245,255,0.35)", textTransform: "uppercase" }}>{label}</div>
+              <div style={{ fontFamily: "'Orbitron',monospace", fontWeight: 700, fontSize: "1rem", color, textShadow: `0 0 8px ${color}` }}>{val}</div>
+            </div>
+          ))}
+        </div>
 
-         {!submitted ? (
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8, width: "100%", maxWidth: 220 }}>
-              <div style={{ fontSize: "0.55rem", letterSpacing: "0.2em", color: "rgba(0,245,255,0.4)" }}>ENTER YOUR NAME</div>
-              <input
-                maxLength={12}
-                value={playerName}
-                onChange={e => setPlayerName(e.target.value.toUpperCase())}
-                placeholder="PILOT"
-                style={{
-                   width: "100%", padding: "8px 12px",
-                  fontFamily: "'Orbitron',monospace", fontWeight: 700, fontSize: "0.9rem",
-                  background: "rgba(0,245,255,0.05)", border: "1px solid rgba(0,245,255,0.3)",
-                  color: C.cyan, textAlign: "center", letterSpacing: "0.2em", outline: "none",
-                }}
-              />
+      {!submitted ? (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8, width: "100%", maxWidth: 220 }}>
+          <div style={{ fontSize: "0.55rem", letterSpacing: "0.2em", color: "rgba(0,245,255,0.4)" }}>ENTER YOUR NAME</div>
+          <input
+            maxLength={12}
+            value={playerName}
+            onChange={e => setPlayerName(e.target.value.toUpperCase())}
+            placeholder="PILOT"
+            style={{
+              width: "100%", padding: "8px 12px",
+              fontFamily: "'Orbitron',monospace", fontWeight: 700, fontSize: "0.9rem",
+              background: "rgba(0,245,255,0.05)", border: "1px solid rgba(0,245,255,0.3)",
+              color: C.cyan, textAlign: "center", letterSpacing: "0.2em", outline: "none",
+            }}
+          />
+          <GlowBtn onClick={handleSubmit} color={C.yellow} style={{ fontSize: "0.7rem", padding: "8px 28px" }}>
+            SUBMIT SCORE
+          </GlowBtn>
+        </div>
