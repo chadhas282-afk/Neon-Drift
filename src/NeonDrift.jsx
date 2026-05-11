@@ -538,3 +538,8 @@ function Overlay({ type, score, best, coins, diff, onResume, onMenu, onSubmit, p
     </div>
   );
 }
+
+export default function NeonDriftPro() {
+  const canvasRef = useRef(null);
+  const gRef = useRef(null);
+  const rafRef = useRef(null);
