@@ -479,3 +479,9 @@ function Overlay({ type, score, best, coins, diff, onResume, onMenu, onSubmit, p
   const isOver = type === "gameover";
   const [submitted, setSubmitted] = useState(false);
   const handleSubmit = () => { onSubmit(playerName || "PILOT"); setSubmitted(true); };
+
+  return (
+    <div style={{
+      position: "absolute", inset: 0, background: "rgba(2,2,14,0.92)", backdropFilter: "blur(6px)",
+      display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+      
