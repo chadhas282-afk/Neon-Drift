@@ -452,3 +452,8 @@ function HUD({ score, speed, lives, maxLives, coins, combo, multiplier, activeSh
           {[
             { active: activeShield, t: shieldT, type: "shield" },
             { active: activeNitro, t: nitroT, type: "nitro" },
+            { active: activeMagnet, t: magnetT, type: "magnet" },
+            { active: activeSlow, t: slowT, type: "slow" },
+          ].filter(p => p.active).map(p => {
+            const cfg = POWERUP_TYPES[p.type];
+            return (
