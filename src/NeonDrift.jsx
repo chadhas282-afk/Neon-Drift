@@ -489,3 +489,8 @@ function Overlay({ type, score, best, coins, diff, onResume, onMenu, onSubmit, p
       <div style={{
         fontFamily: "'Orbitron',monospace", fontWeight: 900, fontSize: "1.8rem", letterSpacing: "0.2em",
         color: isOver ? C.pink : C.cyan, textShadow: `0 0 20px ${isOver ? C.pink : C.cyan}`,
+         }}>{isOver ? "GAME OVER" : "PAUSED"}</div>
+
+      {isOver && (
+        <>
+          <div style={{ display: "flex", gap: 24, margin: "4px 0" }}></div>
