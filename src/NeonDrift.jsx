@@ -457,3 +457,8 @@ function HUD({ score, speed, lives, maxLives, coins, combo, multiplier, activeSh
           ].filter(p => p.active).map(p => {
             const cfg = POWERUP_TYPES[p.type];
             return (
+              <div key={p.type} style={{
+                display: "flex", alignItems: "center", gap: 4, padding: "2px 6px",
+                border: `1px solid ${cfg.color}66`, background: `${cfg.color}11`,
+                borderRadius: 2,
+              }}>
