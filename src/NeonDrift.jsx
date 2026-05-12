@@ -569,3 +569,7 @@ export default function NeonDriftPro() {
       shieldTimer: 0, nitroTimer: 0, magnetTimer: 0, slowTimer: 0,
       player: { x: W / 2, y: H - 120, w: 30, h: 54, vx: 0 },
       obstacles: [], powerups: [], coinItems: [],
+       particles: [], comboTexts: [],
+      stars: mkStars(),
+      running: true,
+    };
