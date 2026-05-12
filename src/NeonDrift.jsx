@@ -558,3 +558,7 @@ export default function NeonDriftPro() {
     upd(); window.addEventListener("resize", upd);
     return () => window.removeEventListener("resize", upd);
   }, []);
+
+  const startGame = useCallback((diff) => {
+    const cfg = DIFF[diff];
+    const g = {
