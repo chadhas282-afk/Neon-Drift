@@ -566,3 +566,6 @@ export default function NeonDriftPro() {
       score: 0, speed: cfg.baseSpeed, lives: cfg.lives,
       coins: 0, combo: 0, comboTimer: 0, multiplier: 1,
       frame: 0, flashTimer: 0, invincTimer: 0, roadOffset: 0,
+      shieldTimer: 0, nitroTimer: 0, magnetTimer: 0, slowTimer: 0,
+      player: { x: W / 2, y: H - 120, w: 30, h: 54, vx: 0 },
+      obstacles: [], powerups: [], coinItems: [],
