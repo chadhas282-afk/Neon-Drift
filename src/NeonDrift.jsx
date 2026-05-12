@@ -543,3 +543,7 @@ export default function NeonDriftPro() {
   const canvasRef = useRef(null);
   const gRef = useRef(null);
   const rafRef = useRef(null);
+    const mKeys = useRef({ left: false, right: false });
+  const [uiState, setUiState] = useState("title");
+  const [hud, setHud] = useState({ score: 0, speed: 0, lives: 3, maxLives: 3, coins: 0, combo: 0, multiplier: 1, activeShield: false, activeNitro: false, activeMagnet: false, activeSlow: false, shieldT: 0, nitroT: 0, magnetT: 0, slowT: 0 });
+  const bestRef = useRef(lsGet("ndpro_best", 0));
