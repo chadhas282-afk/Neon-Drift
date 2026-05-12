@@ -551,3 +551,7 @@ export default function NeonDriftPro() {
   const [playerName, setPlayerName] = useState("");
   const [scale, setScale] = useState(1);
   const isTouchDev = useRef(false);
+
+  useEffect(() => {
+    isTouchDev.current = "ontouchstart" in window;
+    const upd = () => setScale(Math.min(1, (window.innerWidth - 16) / W));
