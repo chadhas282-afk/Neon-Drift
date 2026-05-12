@@ -577,3 +577,8 @@ export default function NeonDriftPro() {
     setPlayerName("");
     setUiState("playing");
   }, []);
+
+  useEffect(() => {
+    const dn = e => {
+      const g = gRef.current; if (!g) return;
+      g.keys = g.keys || {};
