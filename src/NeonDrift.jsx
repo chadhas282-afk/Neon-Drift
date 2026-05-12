@@ -543,7 +543,7 @@ export default function NeonDriftPro() {
   const canvasRef = useRef(null);
   const gRef = useRef(null);
   const rafRef = useRef(null);
-    const mKeys = useRef({ left: false, right: false });
+  const mKeys = useRef({ left: false, right: false });
   const [uiState, setUiState] = useState("title");
   const [hud, setHud] = useState({ score: 0, speed: 0, lives: 3, maxLives: 3, coins: 0, combo: 0, multiplier: 1, activeShield: false, activeNitro: false, activeMagnet: false, activeSlow: false, shieldT: 0, nitroT: 0, magnetT: 0, slowT: 0 });
   const bestRef = useRef(lsGet("ndpro_best", 0));
@@ -569,11 +569,11 @@ export default function NeonDriftPro() {
       shieldTimer: 0, nitroTimer: 0, magnetTimer: 0, slowTimer: 0,
       player: { x: W / 2, y: H - 120, w: 30, h: 54, vx: 0 },
       obstacles: [], powerups: [], coinItems: [],
-       particles: [], comboTexts: [],
+      particles: [], comboTexts: [],
       stars: mkStars(),
       running: true,
     };
-     gRef.current = g;
+    gRef.current = g;
     setPlayerName("");
     setUiState("playing");
   }, []);
@@ -587,18 +587,23 @@ export default function NeonDriftPro() {
         g.running = false; setUiState("paused"); cancelAnimationFrame(rafRef.current);
       } else if (!g.running && uiState === "paused" && (e.code === "Space" || e.code === "KeyP")) {
         g.running = true; setUiState("playing");
-         }
+      }
       if (["ArrowLeft", "ArrowRight", "Space"].includes(e.code)) e.preventDefault();
     };
     const up = e => { if (gRef.current) { gRef.current.keys = gRef.current.keys || {}; gRef.current.keys[e.code] = false; } };
     window.addEventListener("keydown", dn);
-     window.addEventListener("keyup", up);
+    window.addEventListener("keyup", up);
     return () => { window.removeEventListener("keydown", dn); window.removeEventListener("keyup", up); };
   }, [uiState]);
 
-    const spawnParticles = (g, x, y, colors, n = 24) => {
+  const spawnParticles = (g, x, y, colors, n = 24) => {
     for (let i = 0; i < n; i++) {
       const a = (i / n) * Math.PI * 2, spd = 1.5 + Math.random() * 4;
-        g.particles.push({
+      g.particles.push({
         x, y, vx: Math.cos(a) * spd, vy: Math.sin(a) * spd,
         life: 25 + Math.random() * 25, maxLife: 50,
+        r: 2 + Math.random() * 3,
+        color: colors[Math.floor(Math.random() * colors.length)],
+      });
+    }
+  };
