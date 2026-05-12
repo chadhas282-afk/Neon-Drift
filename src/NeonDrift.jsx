@@ -611,3 +611,9 @@ export default function NeonDriftPro() {
     const tick = useCallback(() => {
     const g = gRef.current;
     if (!g || !g.running) return;
+     const canvas = canvasRef.current; if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+
+    const slowFactor = g.slowTimer > 0 ? 0.55 : 1;
+
+    g.frame++;
