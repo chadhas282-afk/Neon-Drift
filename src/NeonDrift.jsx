@@ -562,3 +562,7 @@ export default function NeonDriftPro() {
   const startGame = useCallback((diff) => {
     const cfg = DIFF[diff];
     const g = {
+      diff, cfg,
+      score: 0, speed: cfg.baseSpeed, lives: cfg.lives,
+      coins: 0, combo: 0, comboTimer: 0, multiplier: 1,
+      frame: 0, flashTimer: 0, invincTimer: 0, roadOffset: 0,
