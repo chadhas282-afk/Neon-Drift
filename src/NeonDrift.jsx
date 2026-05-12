@@ -555,3 +555,6 @@ export default function NeonDriftPro() {
   useEffect(() => {
     isTouchDev.current = "ontouchstart" in window;
     const upd = () => setScale(Math.min(1, (window.innerWidth - 16) / W));
+    upd(); window.addEventListener("resize", upd);
+    return () => window.removeEventListener("resize", upd);
+  }, []);
