@@ -613,7 +613,8 @@ export default function NeonDriftPro() {
     if (!g || !g.running) return;
      const canvas = canvasRef.current; if (!canvas) return;
     const ctx = canvas.getContext("2d");
-
     const slowFactor = g.slowTimer > 0 ? 0.55 : 1;
-
     g.frame++;
+     const nitroMult = g.nitroTimer > 0 ? 1.8 : 1;
+    g.speed = Math.min(g.speed + g.cfg.speedInc * nitroMult, 28);
+    g.score += Math.floor(g.speed * 0.12 * g.multiplier * slowFactor);
