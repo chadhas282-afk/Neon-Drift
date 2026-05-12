@@ -590,3 +590,5 @@ export default function NeonDriftPro() {
          }
       if (["ArrowLeft", "ArrowRight", "Space"].includes(e.code)) e.preventDefault();
     };
+    const up = e => { if (gRef.current) { gRef.current.keys = gRef.current.keys || {}; gRef.current.keys[e.code] = false; } };
+    window.addEventListener("keydown", dn);
