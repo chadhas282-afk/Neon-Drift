@@ -582,3 +582,8 @@ export default function NeonDriftPro() {
     const dn = e => {
       const g = gRef.current; if (!g) return;
       g.keys = g.keys || {};
+      g.keys[e.code] = true;
+      if (g.running && (e.code === "Space" || e.code === "KeyP")) {
+        g.running = false; setUiState("paused"); cancelAnimationFrame(rafRef.current);
+      } else if (!g.running && uiState === "paused" && (e.code === "Space" || e.code === "KeyP")) {
+        g.running = true; setUiState("playing");
