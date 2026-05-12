@@ -592,3 +592,6 @@ export default function NeonDriftPro() {
     };
     const up = e => { if (gRef.current) { gRef.current.keys = gRef.current.keys || {}; gRef.current.keys[e.code] = false; } };
     window.addEventListener("keydown", dn);
+     window.addEventListener("keyup", up);
+    return () => { window.removeEventListener("keydown", dn); window.removeEventListener("keyup", up); };
+  }, [uiState]);
