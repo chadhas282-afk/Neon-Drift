@@ -595,3 +595,7 @@ export default function NeonDriftPro() {
      window.addEventListener("keyup", up);
     return () => { window.removeEventListener("keydown", dn); window.removeEventListener("keyup", up); };
   }, [uiState]);
+
+    const spawnParticles = (g, x, y, colors, n = 24) => {
+    for (let i = 0; i < n; i++) {
+      const a = (i / n) * Math.PI * 2, spd = 1.5 + Math.random() * 4;
