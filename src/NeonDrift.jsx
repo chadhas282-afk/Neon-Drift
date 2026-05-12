@@ -573,3 +573,7 @@ export default function NeonDriftPro() {
       stars: mkStars(),
       running: true,
     };
+     gRef.current = g;
+    setPlayerName("");
+    setUiState("playing");
+  }, []);
