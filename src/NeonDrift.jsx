@@ -599,3 +599,6 @@ export default function NeonDriftPro() {
     const spawnParticles = (g, x, y, colors, n = 24) => {
     for (let i = 0; i < n; i++) {
       const a = (i / n) * Math.PI * 2, spd = 1.5 + Math.random() * 4;
+        g.particles.push({
+        x, y, vx: Math.cos(a) * spd, vy: Math.sin(a) * spd,
+        life: 25 + Math.random() * 25, maxLife: 50,
