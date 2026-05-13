@@ -622,3 +622,6 @@ export default function NeonDriftPro() {
     if (g.invincTimer > 0) g.invincTimer--;
     if (g.shieldTimer > 0) g.shieldTimer--;
     if (g.nitroTimer > 0) g.nitroTimer--;
+     if (g.magnetTimer > 0) g.magnetTimer--;
+    if (g.slowTimer > 0) g.slowTimer--;
+    if (g.comboTimer > 0) { g.comboTimer--; } else { g.combo = 0; g.multiplier = 1; }
