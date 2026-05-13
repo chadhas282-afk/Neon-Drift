@@ -631,3 +631,7 @@ export default function NeonDriftPro() {
 
     const accel = 0.6, friction = 0.80, maxVX = 6;
     const mk = mKeys.current;
+    const gk = g.keys || {};
+    if (gk["ArrowLeft"] || gk["KeyA"] || mk.left) g.player.vx -= accel;
+    if (gk["ArrowRight"] || gk["KeyD"] || mk.right) g.player.vx += accel;
+    g.player.vx *= friction;
