@@ -656,3 +656,6 @@ export default function NeonDriftPro() {
     if (Math.random() < 0.004) {
       const lane = Math.floor(Math.random() * LANES);
       const types = Object.keys(POWERUP_TYPES);
+      g.powerups.push({
+        x: ROAD_LEFT + lane * LANE_W + LANE_W / 2, y: -20,
+        type: types[Math.floor(Math.random() * types.length)],
