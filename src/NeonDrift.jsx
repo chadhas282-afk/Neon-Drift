@@ -674,3 +674,7 @@ export default function NeonDriftPro() {
     let hitOccurred = false;
     g.obstacles = g.obstacles.filter(o => {
       o.y += o.speed;
+      if (g.invincTimer <= 0) {
+        const hit = overlap(
+          g.player.x - g.player.w / 2, g.player.y - g.player.h / 2, g.player.w, g.player.h,
+          
