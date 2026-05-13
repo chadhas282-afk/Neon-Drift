@@ -670,3 +670,7 @@ export default function NeonDriftPro() {
         y: -10, speed: g.speed * 0.5 * slowFactor, phase: Math.random() * Math.PI * 2,
       });
     }
+
+    let hitOccurred = false;
+    g.obstacles = g.obstacles.filter(o => {
+      o.y += o.speed;
