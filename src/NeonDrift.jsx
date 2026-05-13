@@ -666,3 +666,7 @@ export default function NeonDriftPro() {
     if (Math.random() < 0.025) {
       const lane = Math.floor(Math.random() * LANES);
       g.coinItems.push({
+         x: ROAD_LEFT + lane * LANE_W + LANE_W / 2 + (Math.random() - 0.5) * 14,
+        y: -10, speed: g.speed * 0.5 * slowFactor, phase: Math.random() * Math.PI * 2,
+      });
+    }
