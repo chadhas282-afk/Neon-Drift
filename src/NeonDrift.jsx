@@ -645,3 +645,6 @@ export default function NeonDriftPro() {
        const types = ["car", "car", "truck", "barrier"];
       const type = types[Math.floor(Math.random() * types.length)];
       const dims = { car: [28, 46], truck: [34, 60], barrier: [54, 18] };
+       const [ow, oh] = dims[type];
+      g.obstacles.push({
+        x, y: -oh, w: ow, h: oh, type,
