@@ -625,3 +625,9 @@ export default function NeonDriftPro() {
      if (g.magnetTimer > 0) g.magnetTimer--;
     if (g.slowTimer > 0) g.slowTimer--;
     if (g.comboTimer > 0) { g.comboTimer--; } else { g.combo = 0; g.multiplier = 1; }
+
+    g.roadOffset = (g.roadOffset + g.speed * slowFactor) % 60;
+    g.stars.forEach(s => { s.y += s.speed * slowFactor; if (s.y > H) s.y = 0; });
+
+    const accel = 0.6, friction = 0.80, maxVX = 6;
+    const mk = mKeys.current;
