@@ -652,3 +652,7 @@ export default function NeonDriftPro() {
         color: ["#ff006e", "#ffbe0b", "#ff4500", "#cc00ff", "#ff2255"][Math.floor(Math.random() * 5)],
       });
     }
+
+    if (Math.random() < 0.004) {
+      const lane = Math.floor(Math.random() * LANES);
+      const types = Object.keys(POWERUP_TYPES);
