@@ -618,3 +618,7 @@ export default function NeonDriftPro() {
      const nitroMult = g.nitroTimer > 0 ? 1.8 : 1;
     g.speed = Math.min(g.speed + g.cfg.speedInc * nitroMult, 28);
     g.score += Math.floor(g.speed * 0.12 * g.multiplier * slowFactor);
+    if (g.flashTimer > 0) g.flashTimer--;
+    if (g.invincTimer > 0) g.invincTimer--;
+    if (g.shieldTimer > 0) g.shieldTimer--;
+    if (g.nitroTimer > 0) g.nitroTimer--;
