@@ -648,3 +648,7 @@ export default function NeonDriftPro() {
        const [ow, oh] = dims[type];
       g.obstacles.push({
         x, y: -oh, w: ow, h: oh, type,
+        speed: g.speed * (0.52 + Math.random() * 0.38) * slowFactor,
+        color: ["#ff006e", "#ffbe0b", "#ff4500", "#cc00ff", "#ff2255"][Math.floor(Math.random() * 5)],
+      });
+    }
