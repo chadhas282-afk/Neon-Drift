@@ -638,3 +638,7 @@ export default function NeonDriftPro() {
      g.player.vx = Math.max(-maxVX, Math.min(maxVX, g.player.vx));
     g.player.x += g.player.vx;
     g.player.x = Math.max(ROAD_LEFT + g.player.w / 2 + 4, Math.min(ROAD_RIGHT - g.player.w / 2 - 4, g.player.x));
+
+        if (Math.random() < g.cfg.obsRate * slowFactor) {
+      const lane = Math.floor(Math.random() * LANES);
+      const x = ROAD_LEFT + lane * LANE_W + LANE_W / 2;
