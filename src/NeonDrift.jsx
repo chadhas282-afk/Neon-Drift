@@ -677,4 +677,8 @@ export default function NeonDriftPro() {
       if (g.invincTimer <= 0) {
         const hit = overlap(
           g.player.x - g.player.w / 2, g.player.y - g.player.h / 2, g.player.w, g.player.h,
-          
+           o.x - o.w / 2, o.y - o.h / 2, o.w, o.h
+        );
+        if (hit) {
+          if (g.shieldTimer > 0) {
+            g.shieldTimer = 0;
