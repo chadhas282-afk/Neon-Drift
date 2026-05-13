@@ -682,3 +682,7 @@ export default function NeonDriftPro() {
         if (hit) {
           if (g.shieldTimer > 0) {
             g.shieldTimer = 0;
+            spawnParticles(g, o.x, o.y, [C.cyan, "#ffffff"], 16);
+            g.comboTexts.push({ x: g.player.x, y: g.player.y - 30, text: "SHIELD!", color: C.cyan, life: 60, maxLife: 60, size: 13 });
+            return false;
+          }
