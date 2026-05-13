@@ -659,3 +659,6 @@ export default function NeonDriftPro() {
       g.powerups.push({
         x: ROAD_LEFT + lane * LANE_W + LANE_W / 2, y: -20,
         type: types[Math.floor(Math.random() * types.length)],
+         speed: g.speed * 0.45 * slowFactor,
+      });
+    }
