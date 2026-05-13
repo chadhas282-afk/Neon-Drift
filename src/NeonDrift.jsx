@@ -642,3 +642,6 @@ export default function NeonDriftPro() {
         if (Math.random() < g.cfg.obsRate * slowFactor) {
       const lane = Math.floor(Math.random() * LANES);
       const x = ROAD_LEFT + lane * LANE_W + LANE_W / 2;
+       const types = ["car", "car", "truck", "barrier"];
+      const type = types[Math.floor(Math.random() * types.length)];
+      const dims = { car: [28, 46], truck: [34, 60], barrier: [54, 18] };
