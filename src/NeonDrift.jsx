@@ -686,3 +686,6 @@ export default function NeonDriftPro() {
             g.comboTexts.push({ x: g.player.x, y: g.player.y - 30, text: "SHIELD!", color: C.cyan, life: 60, maxLife: 60, size: 13 });
             return false;
           }
+          g.lives--;
+          g.flashTimer = 35; g.invincTimer = 100;
+          g.combo = 0; g.multiplier = 1;
