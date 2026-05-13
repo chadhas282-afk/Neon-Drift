@@ -689,3 +689,10 @@ export default function NeonDriftPro() {
           g.lives--;
           g.flashTimer = 35; g.invincTimer = 100;
           g.combo = 0; g.multiplier = 1;
+           spawnParticles(g, o.x, o.y, [C.pink, C.yellow, "#ff4500", "#fff"]);
+          hitOccurred = true;
+          return false;
+        }
+      }
+      return o.y < H + 100;
+    });
