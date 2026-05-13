@@ -608,21 +608,24 @@ export default function NeonDriftPro() {
     }
   };
 
-    const tick = useCallback(() => {
+  const tick = useCallback(() => {
     const g = gRef.current;
     if (!g || !g.running) return;
-     const canvas = canvasRef.current; if (!canvas) return;
+    const canvas = canvasRef.current; if (!canvas) return;
     const ctx = canvas.getContext("2d");
+
     const slowFactor = g.slowTimer > 0 ? 0.55 : 1;
+
     g.frame++;
-     const nitroMult = g.nitroTimer > 0 ? 1.8 : 1;
+    const nitroMult = g.nitroTimer > 0 ? 1.8 : 1;
     g.speed = Math.min(g.speed + g.cfg.speedInc * nitroMult, 28);
     g.score += Math.floor(g.speed * 0.12 * g.multiplier * slowFactor);
+
     if (g.flashTimer > 0) g.flashTimer--;
     if (g.invincTimer > 0) g.invincTimer--;
     if (g.shieldTimer > 0) g.shieldTimer--;
     if (g.nitroTimer > 0) g.nitroTimer--;
-     if (g.magnetTimer > 0) g.magnetTimer--;
+    if (g.magnetTimer > 0) g.magnetTimer--;
     if (g.slowTimer > 0) g.slowTimer--;
     if (g.comboTimer > 0) { g.comboTimer--; } else { g.combo = 0; g.multiplier = 1; }
 
@@ -635,17 +638,17 @@ export default function NeonDriftPro() {
     if (gk["ArrowLeft"] || gk["KeyA"] || mk.left) g.player.vx -= accel;
     if (gk["ArrowRight"] || gk["KeyD"] || mk.right) g.player.vx += accel;
     g.player.vx *= friction;
-     g.player.vx = Math.max(-maxVX, Math.min(maxVX, g.player.vx));
+    g.player.vx = Math.max(-maxVX, Math.min(maxVX, g.player.vx));
     g.player.x += g.player.vx;
     g.player.x = Math.max(ROAD_LEFT + g.player.w / 2 + 4, Math.min(ROAD_RIGHT - g.player.w / 2 - 4, g.player.x));
 
-        if (Math.random() < g.cfg.obsRate * slowFactor) {
+    if (Math.random() < g.cfg.obsRate * slowFactor) {
       const lane = Math.floor(Math.random() * LANES);
       const x = ROAD_LEFT + lane * LANE_W + LANE_W / 2;
-       const types = ["car", "car", "truck", "barrier"];
+      const types = ["car", "car", "truck", "barrier"];
       const type = types[Math.floor(Math.random() * types.length)];
       const dims = { car: [28, 46], truck: [34, 60], barrier: [54, 18] };
-       const [ow, oh] = dims[type];
+      const [ow, oh] = dims[type];
       g.obstacles.push({
         x, y: -oh, w: ow, h: oh, type,
         speed: g.speed * (0.52 + Math.random() * 0.38) * slowFactor,
@@ -659,14 +662,14 @@ export default function NeonDriftPro() {
       g.powerups.push({
         x: ROAD_LEFT + lane * LANE_W + LANE_W / 2, y: -20,
         type: types[Math.floor(Math.random() * types.length)],
-         speed: g.speed * 0.45 * slowFactor,
+        speed: g.speed * 0.45 * slowFactor,
       });
     }
 
     if (Math.random() < 0.025) {
       const lane = Math.floor(Math.random() * LANES);
       g.coinItems.push({
-         x: ROAD_LEFT + lane * LANE_W + LANE_W / 2 + (Math.random() - 0.5) * 14,
+        x: ROAD_LEFT + lane * LANE_W + LANE_W / 2 + (Math.random() - 0.5) * 14,
         y: -10, speed: g.speed * 0.5 * slowFactor, phase: Math.random() * Math.PI * 2,
       });
     }
@@ -677,7 +680,7 @@ export default function NeonDriftPro() {
       if (g.invincTimer <= 0) {
         const hit = overlap(
           g.player.x - g.player.w / 2, g.player.y - g.player.h / 2, g.player.w, g.player.h,
-           o.x - o.w / 2, o.y - o.h / 2, o.w, o.h
+          o.x - o.w / 2, o.y - o.h / 2, o.w, o.h
         );
         if (hit) {
           if (g.shieldTimer > 0) {
@@ -689,7 +692,7 @@ export default function NeonDriftPro() {
           g.lives--;
           g.flashTimer = 35; g.invincTimer = 100;
           g.combo = 0; g.multiplier = 1;
-           spawnParticles(g, o.x, o.y, [C.pink, C.yellow, "#ff4500", "#fff"]);
+          spawnParticles(g, o.x, o.y, [C.pink, C.yellow, "#ff4500", "#fff"]);
           hitOccurred = true;
           return false;
         }
