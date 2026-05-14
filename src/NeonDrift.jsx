@@ -714,3 +714,7 @@ export default function NeonDriftPro() {
       }
        return p.y < H + 40;
     });
+
+    g.coinItems = g.coinItems.filter(c => {
+      c.y += c.speed;
+      const mag2 = g.magnetTimer > 0;
