@@ -775,3 +775,6 @@ export default function NeonDriftPro() {
     drawBg(ctx);
     drawStars(ctx, g.stars, g.frame);
     drawRoad(ctx, g.roadOffset, g.speed);
+    g.coinItems.forEach(c => drawCoin(ctx, c, g.frame));
+    g.powerups.forEach(p => drawPowerup(ctx, p, g.frame));
+    g.obstacles.forEach(o => drawObstacle(ctx, o, g.frame));
