@@ -745,3 +745,7 @@ export default function NeonDriftPro() {
            vx: (Math.random() - 0.5) * 1.5, vy: 1.8 + Math.random() * 2,
           life: 15 + Math.random() * 12, maxLife: 27,
           r: g.nitroTimer > 0 ? 3.5 : 2 + Math.random() * 2,
+           color: exhaustColors[Math.floor(Math.random() * exhaustColors.length)],
+        });
+      }
+    }
