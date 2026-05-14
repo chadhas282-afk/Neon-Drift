@@ -756,3 +756,8 @@ export default function NeonDriftPro() {
         color: C.yellow, life: 90, maxLife: 90, size: 18,
       });
     }
+
+    if (g.score > bestRef.current) bestRef.current = g.score;
+
+    setHud({
+      score: g.score, speed: g.speed, lives: g.lives, maxLives: g.cfg.lives,
