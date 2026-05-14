@@ -738,3 +738,7 @@ export default function NeonDriftPro() {
     g.comboTexts = g.comboTexts.filter(c => { c.y -= 0.5; c.life--; return c.life > 0; });
 
     if (g.frame % 2 === 0) {
+      const exhaustColors = g.nitroTimer > 0 ? ["#ff6600", "#ff4400", "#ffffff"] : ["#00f5ff", "#ff006e"];
+      for (let i = 0; i < (g.nitroTimer > 0 ? 4 : 2); i++) {
+        g.particles.push({
+          x: g.player.x + (Math.random() - 0.5) * 12, y: g.player.y + g.player.h / 2,
