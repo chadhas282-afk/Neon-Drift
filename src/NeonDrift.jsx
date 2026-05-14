@@ -771,3 +771,7 @@ export default function NeonDriftPro() {
       g.running = false;
       setTimeout(() => setUiState("gameover"), 500);
     }
+
+    drawBg(ctx);
+    drawStars(ctx, g.stars, g.frame);
+    drawRoad(ctx, g.roadOffset, g.speed);
