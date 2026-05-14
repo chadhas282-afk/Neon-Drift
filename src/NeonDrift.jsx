@@ -699,3 +699,7 @@ export default function NeonDriftPro() {
       }
       return o.y < H + 100;
     });
+
+    g.powerups = g.powerups.filter(p => {
+      p.y += p.speed;
+      const mag = g.magnetTimer > 0;
