@@ -703,3 +703,7 @@ export default function NeonDriftPro() {
     g.powerups = g.powerups.filter(p => {
       p.y += p.speed;
       const mag = g.magnetTimer > 0;
+      if (mag) { const dx = g.player.x - p.x, dy = g.player.y - p.y; const d = Math.sqrt(dx * dx + dy * dy); if (d < 120) { p.x += dx / d * 4; p.y += dy / d * 4; } }
+      const hit = overlap(g.player.x - 12, g.player.y - 12, 24, 24, p.x - 14, p.y - 14, 28, 28);
+      if (hit) {
+        const cfg2 = POWERUP_TYPES[p.type];
