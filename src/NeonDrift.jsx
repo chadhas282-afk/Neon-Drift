@@ -725,3 +725,7 @@ export default function NeonDriftPro() {
         g.combo++; g.comboTimer = 80;
         g.multiplier = Math.min(1 + Math.floor(g.combo / 3), 6);
         g.score += 50 * g.multiplier;
+        spawnParticles(g, c.x, c.y, [C.yellow, "#fffde0"], 8);
+        if (g.combo > 1 && g.combo % 5 === 0) {
+          g.comboTexts.push({ x: g.player.x, y: g.player.y - 40, text: `COMBO ×${g.combo}!`, color: C.yellow, life: 80, maxLife: 80, size: 14 });
+        }
