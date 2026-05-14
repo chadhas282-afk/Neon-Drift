@@ -712,3 +712,5 @@ export default function NeonDriftPro() {
         g.comboTexts.push({ x: p.x, y: p.y - 20, text: cfg2.label, color: cfg2.color, life: 70, maxLife: 70, size: 11 });
         return false;
       }
+       return p.y < H + 40;
+    });
