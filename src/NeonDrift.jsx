@@ -749,3 +749,10 @@ export default function NeonDriftPro() {
         });
       }
     }
+
+     if (g.score > 0 && g.score % 5000 < Math.floor(g.speed * 0.12 * g.multiplier) + 1) {
+      g.comboTexts.push({
+        x: W / 2, y: H / 2, text: `${g.score >= 10000 ? Math.floor(g.score / 1000) + "K" : g.score} PTS!`,
+        color: C.yellow, life: 90, maxLife: 90, size: 18,
+      });
+    }
