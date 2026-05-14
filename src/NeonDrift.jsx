@@ -734,4 +734,7 @@ export default function NeonDriftPro() {
       return c.y < H + 20;
     });
 
-    
+     g.particles = g.particles.filter(p => { p.x += p.vx; p.y += p.vy; p.vy += 0.08; p.life--; return p.life > 0; });
+    g.comboTexts = g.comboTexts.filter(c => { c.y -= 0.5; c.life--; return c.life > 0; });
+
+    if (g.frame % 2 === 0) {
