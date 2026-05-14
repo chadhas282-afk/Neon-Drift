@@ -766,3 +766,8 @@ export default function NeonDriftPro() {
       activeMagnet: g.magnetTimer > 0, activeSlow: g.slowTimer > 0,
       shieldT: g.shieldTimer, nitroT: g.nitroTimer, magnetT: g.magnetTimer, slowT: g.slowTimer,
     });
+
+    if (hitOccurred && g.lives <= 0) {
+      g.running = false;
+      setTimeout(() => setUiState("gameover"), 500);
+    }
