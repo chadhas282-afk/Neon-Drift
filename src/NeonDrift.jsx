@@ -721,3 +721,7 @@ export default function NeonDriftPro() {
        if (mag2) { const dx = g.player.x - c.x, dy = g.player.y - c.y; const d = Math.sqrt(dx * dx + dy * dy); if (d < 130) { c.x += dx / d * 5; c.y += dy / d * 5; } }
       const hit = overlap(g.player.x - 16, g.player.y - 16, 32, 32, c.x - 8, c.y - 8, 16, 16);
       if (hit) {
+        g.coins++;
+        g.combo++; g.comboTimer = 80;
+        g.multiplier = Math.min(1 + Math.floor(g.combo / 3), 6);
+        g.score += 50 * g.multiplier;
