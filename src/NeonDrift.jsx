@@ -729,3 +729,9 @@ export default function NeonDriftPro() {
         if (g.combo > 1 && g.combo % 5 === 0) {
           g.comboTexts.push({ x: g.player.x, y: g.player.y - 40, text: `COMBO ×${g.combo}!`, color: C.yellow, life: 80, maxLife: 80, size: 14 });
         }
+         return false;
+      }
+      return c.y < H + 20;
+    });
+
+    
