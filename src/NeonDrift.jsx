@@ -707,3 +707,8 @@ export default function NeonDriftPro() {
       const hit = overlap(g.player.x - 12, g.player.y - 12, 24, 24, p.x - 14, p.y - 14, 28, 28);
       if (hit) {
         const cfg2 = POWERUP_TYPES[p.type];
+        g[p.type + "Timer"] = cfg2.duration;
+        spawnParticles(g, p.x, p.y, [cfg2.color, "#ffffff"], 12);
+        g.comboTexts.push({ x: p.x, y: p.y - 20, text: cfg2.label, color: cfg2.color, life: 70, maxLife: 70, size: 11 });
+        return false;
+      }
