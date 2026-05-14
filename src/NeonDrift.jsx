@@ -761,3 +761,6 @@ export default function NeonDriftPro() {
 
     setHud({
       score: g.score, speed: g.speed, lives: g.lives, maxLives: g.cfg.lives,
+       coins: g.coins, combo: g.combo, multiplier: g.multiplier,
+      activeShield: g.shieldTimer > 0, activeNitro: g.nitroTimer > 0,
+      activeMagnet: g.magnetTimer > 0, activeSlow: g.slowTimer > 0,
