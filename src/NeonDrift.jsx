@@ -742,3 +742,6 @@ export default function NeonDriftPro() {
       for (let i = 0; i < (g.nitroTimer > 0 ? 4 : 2); i++) {
         g.particles.push({
           x: g.player.x + (Math.random() - 0.5) * 12, y: g.player.y + g.player.h / 2,
+           vx: (Math.random() - 0.5) * 1.5, vy: 1.8 + Math.random() * 2,
+          life: 15 + Math.random() * 12, maxLife: 27,
+          r: g.nitroTimer > 0 ? 3.5 : 2 + Math.random() * 2,
