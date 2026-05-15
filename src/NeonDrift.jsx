@@ -816,3 +816,9 @@ export default function NeonDriftPro() {
     if (gRef.current) gRef.current.running = true;
     setUiState("playing");
   };
+
+  const handleMenu = () => {
+    cancelAnimationFrame(rafRef.current);
+    if (gRef.current) gRef.current.running = false;
+    setUiState("title");
+  };
