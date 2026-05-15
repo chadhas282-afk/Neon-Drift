@@ -850,3 +850,8 @@ export default function NeonDriftPro() {
           position: "fixed", inset: 0, pointerEvents: "none",
           backgroundImage: "linear-gradient(rgba(0,245,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,245,255,0.04) 1px,transparent 1px)",
           backgroundSize: "44px 44px",
+           animation: "gridScroll 8s linear infinite",
+        }} />
+        <style>{`@keyframes gridScroll{from{background-position:0 0}to{background-position:0 44px}}`}</style>
+
+        <div style={{
