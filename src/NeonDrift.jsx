@@ -875,3 +875,5 @@ export default function NeonDriftPro() {
                    boxShadow: "0 0 50px rgba(0,245,255,0.08),0 0 0 1px rgba(0,245,255,0.04)",
                   imageRendering: "pixelated",
                 }} />
+                div style={{
+                  position: "absolute", inset: 0, pointerEvents: "none",
