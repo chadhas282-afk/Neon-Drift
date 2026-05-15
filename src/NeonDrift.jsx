@@ -872,3 +872,6 @@ export default function NeonDriftPro() {
                    display: "block",
                   width: W * scale, height: H * scale,
                   border: "1px solid rgba(0,245,255,0.12)",
+                   boxShadow: "0 0 50px rgba(0,245,255,0.08),0 0 0 1px rgba(0,245,255,0.04)",
+                  imageRendering: "pixelated",
+                }} />
