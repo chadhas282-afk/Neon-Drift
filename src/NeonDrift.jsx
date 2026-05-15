@@ -862,3 +862,10 @@ export default function NeonDriftPro() {
           {uiState === "title" && (
             <TitleScreen onStart={startGame} leaderboard={leaderboardRef.current} />
           )}
+
+          {uiState !== "title" && (
+            <>
+              <HUD {...hud} diffColor={gRef.current ? DIFF[gRef.current.diff]?.color : C.cyan} />
+
+              <div style={{ position: "relative" }}>
+                <canvas ref={canvasRef} width={W} height={H} style={{
