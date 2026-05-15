@@ -808,3 +808,6 @@ export default function NeonDriftPro() {
     if (uiState === "playing" && gRef.current) {
       gRef.current.running = true;
       rafRef.current = requestAnimationFrame(tick);
+       }
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [uiState === "playing"]);
