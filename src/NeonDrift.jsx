@@ -803,3 +803,8 @@ export default function NeonDriftPro() {
 
     rafRef.current = requestAnimationFrame(tick);
   }, []);
+
+    useEffect(() => {
+    if (uiState === "playing" && gRef.current) {
+      gRef.current.running = true;
+      rafRef.current = requestAnimationFrame(tick);
