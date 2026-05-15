@@ -827,3 +827,7 @@ export default function NeonDriftPro() {
     const g = gRef.current; if (!g) return;
     const lb = [...leaderboardRef.current, { name, score: g.score, diff: g.diff, coins: g.coins }]
       .sort((a, b) => b.score - a.score).slice(0, 10);
+      leaderboardRef.current = lb;
+    lsSet("ndpro_lb", lb);
+    lsSet("ndpro_best", bestRef.current);
+  };
