@@ -782,3 +782,8 @@ export default function NeonDriftPro() {
     drawPlayer(ctx, g.player, g.invincTimer, g.shieldTimer > 0, g.nitroTimer > 0, g.frame);
     drawComboText(ctx, g.comboTexts, g.frame);
     drawHUDCanvas(ctx, g, g.frame);
+
+    if (g.flashTimer > 0) {
+      ctx.fillStyle = `rgba(255,0,110,${(g.flashTimer / 35) * 0.3})`;
+      ctx.fillRect(0, 0, W, H);
+    }
