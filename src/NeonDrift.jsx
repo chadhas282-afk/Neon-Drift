@@ -844,3 +844,9 @@ export default function NeonDriftPro() {
        <div style={{
         minHeight: "100vh", background: "#02020e",
         display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+        position: "relative", overflow: "hidden",
+      }}>
+        <div style={{
+          position: "fixed", inset: 0, pointerEvents: "none",
+          backgroundImage: "linear-gradient(rgba(0,245,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,245,255,0.04) 1px,transparent 1px)",
+          backgroundSize: "44px 44px",
