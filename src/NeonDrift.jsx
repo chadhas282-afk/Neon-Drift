@@ -831,3 +831,16 @@ export default function NeonDriftPro() {
     lsSet("ndpro_lb", lb);
     lsSet("ndpro_best", bestRef.current);
   };
+
+  return (
+    <>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap');
+        @keyframes logoFlicker{0%,94%,100%{opacity:1}95%{opacity:.7}96%{opacity:1}97%{opacity:.5}99%{opacity:1}}
+        *{box-sizing:border-box;margin:0;padding:0;}
+        body{background:#02020e;overflow:hidden;}
+        input::placeholder{color:rgba(0,245,255,0.2);}
+      `}</style>
+       <div style={{
+        minHeight: "100vh", background: "#02020e",
+        display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
