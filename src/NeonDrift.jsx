@@ -855,3 +855,10 @@ export default function NeonDriftPro() {
         <style>{`@keyframes gridScroll{from{background-position:0 0}to{background-position:0 44px}}`}</style>
 
         <div style={{
+          position: "relative", zIndex: 1,
+          display: "flex", flexDirection: "column", alignItems: "center",
+          width: "100%", maxWidth: W + 16,
+        }}>
+          {uiState === "title" && (
+            <TitleScreen onStart={startGame} leaderboard={leaderboardRef.current} />
+          )}
