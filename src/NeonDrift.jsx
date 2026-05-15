@@ -791,3 +791,8 @@ export default function NeonDriftPro() {
     if (g.speed > 10) {
       const alpha = Math.min((g.speed - 10) / 16, 0.28);
       ctx.strokeStyle = `rgba(0,245,255,${alpha})`; ctx.lineWidth = 0.6;
+      for (let i = 0; i < 14; i++) {
+        const lx = Math.random() * W;
+        ctx.beginPath(); ctx.moveTo(lx, 0); ctx.lineTo(lx, H); ctx.stroke();
+      }
+    }
