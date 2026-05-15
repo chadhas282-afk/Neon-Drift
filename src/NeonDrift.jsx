@@ -796,3 +796,10 @@ export default function NeonDriftPro() {
         ctx.beginPath(); ctx.moveTo(lx, 0); ctx.lineTo(lx, H); ctx.stroke();
       }
     }
+
+    const vig = ctx.createRadialGradient(W / 2, H / 2, H * 0.3, W / 2, H / 2, H * 0.8);
+    vig.addColorStop(0, "transparent"); vig.addColorStop(1, "rgba(2,2,14,0.55)");
+    ctx.fillStyle = vig; ctx.fillRect(0, 0, W, H);
+
+    rafRef.current = requestAnimationFrame(tick);
+  }, []);
