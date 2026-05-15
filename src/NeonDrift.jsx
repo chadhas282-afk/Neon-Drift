@@ -869,3 +869,6 @@ export default function NeonDriftPro() {
 
               <div style={{ position: "relative" }}>
                 <canvas ref={canvasRef} width={W} height={H} style={{
+                   display: "block",
+                  width: W * scale, height: H * scale,
+                  border: "1px solid rgba(0,245,255,0.12)",
