@@ -778,3 +778,7 @@ export default function NeonDriftPro() {
     g.coinItems.forEach(c => drawCoin(ctx, c, g.frame));
     g.powerups.forEach(p => drawPowerup(ctx, p, g.frame));
     g.obstacles.forEach(o => drawObstacle(ctx, o, g.frame));
+    drawParticles(ctx, g.particles);
+    drawPlayer(ctx, g.player, g.invincTimer, g.shieldTimer > 0, g.nitroTimer > 0, g.frame);
+    drawComboText(ctx, g.comboTexts, g.frame);
+    drawHUDCanvas(ctx, g, g.frame);
