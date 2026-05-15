@@ -787,3 +787,7 @@ export default function NeonDriftPro() {
       ctx.fillStyle = `rgba(255,0,110,${(g.flashTimer / 35) * 0.3})`;
       ctx.fillRect(0, 0, W, H);
     }
+
+    if (g.speed > 10) {
+      const alpha = Math.min((g.speed - 10) / 16, 0.28);
+      ctx.strokeStyle = `rgba(0,245,255,${alpha})`; ctx.lineWidth = 0.6;
