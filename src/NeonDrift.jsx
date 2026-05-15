@@ -822,3 +822,8 @@ export default function NeonDriftPro() {
     if (gRef.current) gRef.current.running = false;
     setUiState("title");
   };
+
+  const handleSubmit = (name) => {
+    const g = gRef.current; if (!g) return;
+    const lb = [...leaderboardRef.current, { name, score: g.score, diff: g.diff, coins: g.coins }]
+      .sort((a, b) => b.score - a.score).slice(0, 10);
