@@ -712,13 +712,13 @@ export default function NeonDriftPro() {
         g.comboTexts.push({ x: p.x, y: p.y - 20, text: cfg2.label, color: cfg2.color, life: 70, maxLife: 70, size: 11 });
         return false;
       }
-       return p.y < H + 40;
+      return p.y < H + 40;
     });
 
     g.coinItems = g.coinItems.filter(c => {
       c.y += c.speed;
       const mag2 = g.magnetTimer > 0;
-       if (mag2) { const dx = g.player.x - c.x, dy = g.player.y - c.y; const d = Math.sqrt(dx * dx + dy * dy); if (d < 130) { c.x += dx / d * 5; c.y += dy / d * 5; } }
+      if (mag2) { const dx = g.player.x - c.x, dy = g.player.y - c.y; const d = Math.sqrt(dx * dx + dy * dy); if (d < 130) { c.x += dx / d * 5; c.y += dy / d * 5; } }
       const hit = overlap(g.player.x - 16, g.player.y - 16, 32, 32, c.x - 8, c.y - 8, 16, 16);
       if (hit) {
         g.coins++;
@@ -729,12 +729,12 @@ export default function NeonDriftPro() {
         if (g.combo > 1 && g.combo % 5 === 0) {
           g.comboTexts.push({ x: g.player.x, y: g.player.y - 40, text: `COMBO ×${g.combo}!`, color: C.yellow, life: 80, maxLife: 80, size: 14 });
         }
-         return false;
+        return false;
       }
       return c.y < H + 20;
     });
 
-     g.particles = g.particles.filter(p => { p.x += p.vx; p.y += p.vy; p.vy += 0.08; p.life--; return p.life > 0; });
+    g.particles = g.particles.filter(p => { p.x += p.vx; p.y += p.vy; p.vy += 0.08; p.life--; return p.life > 0; });
     g.comboTexts = g.comboTexts.filter(c => { c.y -= 0.5; c.life--; return c.life > 0; });
 
     if (g.frame % 2 === 0) {
@@ -742,15 +742,15 @@ export default function NeonDriftPro() {
       for (let i = 0; i < (g.nitroTimer > 0 ? 4 : 2); i++) {
         g.particles.push({
           x: g.player.x + (Math.random() - 0.5) * 12, y: g.player.y + g.player.h / 2,
-           vx: (Math.random() - 0.5) * 1.5, vy: 1.8 + Math.random() * 2,
+          vx: (Math.random() - 0.5) * 1.5, vy: 1.8 + Math.random() * 2,
           life: 15 + Math.random() * 12, maxLife: 27,
           r: g.nitroTimer > 0 ? 3.5 : 2 + Math.random() * 2,
-           color: exhaustColors[Math.floor(Math.random() * exhaustColors.length)],
+          color: exhaustColors[Math.floor(Math.random() * exhaustColors.length)],
         });
       }
     }
 
-     if (g.score > 0 && g.score % 5000 < Math.floor(g.speed * 0.12 * g.multiplier) + 1) {
+    if (g.score > 0 && g.score % 5000 < Math.floor(g.speed * 0.12 * g.multiplier) + 1) {
       g.comboTexts.push({
         x: W / 2, y: H / 2, text: `${g.score >= 10000 ? Math.floor(g.score / 1000) + "K" : g.score} PTS!`,
         color: C.yellow, life: 90, maxLife: 90, size: 18,
@@ -761,7 +761,7 @@ export default function NeonDriftPro() {
 
     setHud({
       score: g.score, speed: g.speed, lives: g.lives, maxLives: g.cfg.lives,
-       coins: g.coins, combo: g.combo, multiplier: g.multiplier,
+      coins: g.coins, combo: g.combo, multiplier: g.multiplier,
       activeShield: g.shieldTimer > 0, activeNitro: g.nitroTimer > 0,
       activeMagnet: g.magnetTimer > 0, activeSlow: g.slowTimer > 0,
       shieldT: g.shieldTimer, nitroT: g.nitroTimer, magnetT: g.magnetTimer, slowT: g.slowTimer,
@@ -804,11 +804,11 @@ export default function NeonDriftPro() {
     rafRef.current = requestAnimationFrame(tick);
   }, []);
 
-    useEffect(() => {
+  useEffect(() => {
     if (uiState === "playing" && gRef.current) {
       gRef.current.running = true;
       rafRef.current = requestAnimationFrame(tick);
-       }
+    }
     return () => cancelAnimationFrame(rafRef.current);
   }, [uiState === "playing"]);
 
@@ -827,7 +827,7 @@ export default function NeonDriftPro() {
     const g = gRef.current; if (!g) return;
     const lb = [...leaderboardRef.current, { name, score: g.score, diff: g.diff, coins: g.coins }]
       .sort((a, b) => b.score - a.score).slice(0, 10);
-      leaderboardRef.current = lb;
+    leaderboardRef.current = lb;
     lsSet("ndpro_lb", lb);
     lsSet("ndpro_best", bestRef.current);
   };
@@ -841,7 +841,8 @@ export default function NeonDriftPro() {
         body{background:#02020e;overflow:hidden;}
         input::placeholder{color:rgba(0,245,255,0.2);}
       `}</style>
-       <div style={{
+
+      <div style={{
         minHeight: "100vh", background: "#02020e",
         display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
         position: "relative", overflow: "hidden",
@@ -850,7 +851,7 @@ export default function NeonDriftPro() {
           position: "fixed", inset: 0, pointerEvents: "none",
           backgroundImage: "linear-gradient(rgba(0,245,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,245,255,0.04) 1px,transparent 1px)",
           backgroundSize: "44px 44px",
-           animation: "gridScroll 8s linear infinite",
+          animation: "gridScroll 8s linear infinite",
         }} />
         <style>{`@keyframes gridScroll{from{background-position:0 0}to{background-position:0 44px}}`}</style>
 
@@ -869,11 +870,14 @@ export default function NeonDriftPro() {
 
               <div style={{ position: "relative" }}>
                 <canvas ref={canvasRef} width={W} height={H} style={{
-                   display: "block",
+                  display: "block",
                   width: W * scale, height: H * scale,
                   border: "1px solid rgba(0,245,255,0.12)",
-                   boxShadow: "0 0 50px rgba(0,245,255,0.08),0 0 0 1px rgba(0,245,255,0.04)",
+                  boxShadow: "0 0 50px rgba(0,245,255,0.08),0 0 0 1px rgba(0,245,255,0.04)",
                   imageRendering: "pixelated",
                 }} />
-                div style={{
+                <div style={{
                   position: "absolute", inset: 0, pointerEvents: "none",
+                  background: "repeating-linear-gradient(to bottom,transparent 0,transparent 3px,rgba(0,0,0,0.12) 3px,rgba(0,0,0,0.12) 4px)",
+                  zIndex: 5,
+                }} />
