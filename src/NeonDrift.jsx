@@ -909,3 +909,6 @@ export default function NeonDriftPro() {
                     { label: "◀", onL: () => { mKeys.current.left = true; }, onR: () => { mKeys.current.left = false; } },
                     { label: "▶", onL: () => { mKeys.current.right = true; }, onR: () => { mKeys.current.right = false; } },
                   ].map(({ label, onL, onR }) => (
+                    <button key={label}
+                      onTouchStart={e => { e.preventDefault(); onL(); }}
+                      onTouchEnd={e => { e.preventDefault(); onR(); }}
