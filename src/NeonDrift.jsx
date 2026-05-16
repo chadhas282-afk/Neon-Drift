@@ -912,3 +912,7 @@ export default function NeonDriftPro() {
                     <button key={label}
                       onTouchStart={e => { e.preventDefault(); onL(); }}
                       onTouchEnd={e => { e.preventDefault(); onR(); }}
+                      onMouseDown={onL} onMouseUp={onR}
+                      style={{
+                        fontFamily: "'Orbitron',monospace", fontWeight: 700, fontSize: "1.3rem",
+                        width: 76, height: 58,
