@@ -881,3 +881,8 @@ export default function NeonDriftPro() {
                   background: "repeating-linear-gradient(to bottom,transparent 0,transparent 3px,rgba(0,0,0,0.12) 3px,rgba(0,0,0,0.12) 4px)",
                   zIndex: 5,
                 }} />
+                <div style={{
+                  position: "absolute", inset: 0, pointerEvents: "none",
+                  background: "radial-gradient(ellipse at center,transparent 60%,rgba(2,2,14,0.7) 100%)",
+                  zIndex: 6,
+                }} />
