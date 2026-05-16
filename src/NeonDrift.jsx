@@ -895,3 +895,6 @@ export default function NeonDriftPro() {
                     coins={hud.coins}
                     diff={gRef.current?.diff}
                     onResume={handleResume}
+                    onMenu={handleMenu}
+                    onSubmit={handleSubmit}
+                    playerName={playerName}
