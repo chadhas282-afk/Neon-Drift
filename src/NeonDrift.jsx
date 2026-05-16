@@ -919,3 +919,8 @@ export default function NeonDriftPro() {
                         border: "1px solid rgba(0,245,255,0.35)",
                         background: "rgba(0,245,255,0.04)", color: C.cyan,
                         cursor: "pointer", borderRadius: 4,
+                        WebkitTapHighlightColor: "transparent", userSelect: "none",
+                      }}>{label}</button>
+                  ))}
+                </div>
+              )}
