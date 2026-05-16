@@ -898,3 +898,7 @@ export default function NeonDriftPro() {
                     onMenu={handleMenu}
                     onSubmit={handleSubmit}
                     playerName={playerName}
+                    setPlayerName={setPlayerName}
+                  />
+                )}
+              </div>
