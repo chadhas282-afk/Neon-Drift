@@ -916,3 +916,6 @@ export default function NeonDriftPro() {
                       style={{
                         fontFamily: "'Orbitron',monospace", fontWeight: 700, fontSize: "1.3rem",
                         width: 76, height: 58,
+                        border: "1px solid rgba(0,245,255,0.35)",
+                        background: "rgba(0,245,255,0.04)", color: C.cyan,
+                        cursor: "pointer", borderRadius: 4,
