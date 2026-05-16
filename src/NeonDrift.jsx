@@ -902,3 +902,10 @@ export default function NeonDriftPro() {
                   />
                 )}
               </div>
+
+              {isTouchDev.current && (
+                <div style={{ display: "flex", gap: 14, marginTop: 12, justifyContent: "center" }}>
+                  {[
+                    { label: "◀", onL: () => { mKeys.current.left = true; }, onR: () => { mKeys.current.left = false; } },
+                    { label: "▶", onL: () => { mKeys.current.right = true; }, onR: () => { mKeys.current.right = false; } },
+                  ].map(({ label, onL, onR }) => (
