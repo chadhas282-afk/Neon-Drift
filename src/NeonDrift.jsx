@@ -891,3 +891,7 @@ export default function NeonDriftPro() {
                   <Overlay
                     type={uiState}
                     score={hud.score}
+                    best={bestRef.current}
+                    coins={hud.coins}
+                    diff={gRef.current?.diff}
+                    onResume={handleResume}
