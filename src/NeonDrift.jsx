@@ -886,3 +886,8 @@ export default function NeonDriftPro() {
                   background: "radial-gradient(ellipse at center,transparent 60%,rgba(2,2,14,0.7) 100%)",
                   zIndex: 6,
                 }} />
+
+                {(uiState === "paused" || uiState === "gameover") && (
+                  <Overlay
+                    type={uiState}
+                    score={hud.score}
